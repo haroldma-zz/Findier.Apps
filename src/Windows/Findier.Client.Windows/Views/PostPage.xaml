@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="Findier.Client.Windows.Views.PostPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Findier.Client.Windows.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Findier.Client.Windows.Controls"
+    mc:Ignorable="d"
+    DataContext="{Binding Post, Source={StaticResource ViewModelLocator}}">
+
+    <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <controls:PageHeader Text="Post" />
+        <ListView Grid.Row="1" Padding="0, 5, 0, 0" IsItemClickEnabled="True" SelectionMode="None" ItemsSource="{Binding CommentCollection}">
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <controls:MaterialCard HeaderText="{Binding Post.HeaderText}" 
+                                               ActionButtonText="Message" 
+                                               ActionButtonVisibility="Visible"
+                                               ActionButtonCommand="{Binding MessageCommand}">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Post.Text}" TextWrapping="Wrap" />
+                            </StackPanel>
+                        </controls:MaterialCard>
+                        <TextBlock Text="Comments" Margin="10" FontSize="20" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <controls:MaterialCard HeaderText="{Binding HeaderText}">
+                        <StackPanel>
+                            <TextBlock Text="{Binding Text}" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </controls:MaterialCard>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
