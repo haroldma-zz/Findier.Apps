@@ -45,7 +45,7 @@ namespace Findier.Core.Helpers
 
         public static double ToUnixTimeStamp(DateTime time)
         {
-            if (time.Kind != DateTimeKind.Utc)
+            if (time.Kind == DateTimeKind.Local)
             {
                 time = time.ToUniversalTime();
             }
