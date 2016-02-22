@@ -14,7 +14,7 @@ namespace Findier.Client.Windows.IncrementalLoading
     {
         private readonly IFindierService _findierService;
         private readonly GetFinboardsRequest _request;
-        private FindierBaseResponse<FindierPageData<Finboard>> _currentResponse;
+        private FindierResponse<FindierPageData<Finboard>> _currentResponse;
 
         public FinboardCollection(GetFinboardsRequest request, IFindierService findierService)
         {
@@ -74,7 +74,7 @@ namespace Findier.Client.Windows.IncrementalLoading
                 Request = collection._request;
             }
 
-            public FindierBaseResponse<FindierPageData<Finboard>> CurrentResponse { get; set; }
+            public FindierResponse<FindierPageData<Finboard>> CurrentResponse { get; set; }
 
             public List<Finboard> Items { get; set; }
 

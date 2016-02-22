@@ -1,9 +1,8 @@
 using Findier.Web.Extensions;
-using Findier.Web.Models;
 
 namespace Findier.Web.Requests
 {
-    public class CreateCommentRequest : FindierBaseRequest<Comment>
+    public class CreateCommentRequest : FindierBaseRequest<string>
     {
         public CreateCommentRequest(
             string id,
@@ -14,15 +13,9 @@ namespace Findier.Web.Requests
                 .Parameter(nameof(text), text);
         }
 
-        public override Comment ToDummyData()
+        public override string ToDummyData()
         {
-            return new Comment
-            {
-                User = "Doe",
-                Text = "John dies at the end.",
-                IsOp = true,
-                Ups = 1
-            };
+            return "xS";
         }
     }
 }

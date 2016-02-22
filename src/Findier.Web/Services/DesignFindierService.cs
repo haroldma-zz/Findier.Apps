@@ -33,11 +33,11 @@ namespace Findier.Web.Services
                 Task.FromResult(new RestResponse<OAuthData>(new HttpResponseMessage(HttpStatusCode.OK), new OAuthData()));
         }
 
-        public Task<RestResponse<FindierBaseResponse<TT>>> SendAsync<T, TT>(T request) where T : FindierBaseRequest<TT>
+        public Task<RestResponse<FindierResponse<TT>>> SendAsync<T, TT>(T request) where T : FindierBaseRequest<TT>
         {
             return
-                Task.FromResult(new RestResponse<FindierBaseResponse<TT>>(new HttpResponseMessage(HttpStatusCode.OK),
-                    new FindierBaseResponse<TT>
+                Task.FromResult(new RestResponse<FindierResponse<TT>>(new HttpResponseMessage(HttpStatusCode.OK),
+                    new FindierResponse<TT>
                     {
                         Data = request.ToDummyData()
                     }));

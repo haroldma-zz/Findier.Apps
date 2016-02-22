@@ -65,7 +65,7 @@ namespace Findier.Web.Services
             return response;
         }
 
-        public Task<RestResponse<FindierBaseResponse<TT>>> SendAsync<T, TT>(T request) where T : FindierBaseRequest<TT>
+        public Task<RestResponse<FindierResponse<TT>>> SendAsync<T, TT>(T request) where T : FindierBaseRequest<TT>
         {
             if (typeof (T).GetTypeInfo().GetCustomAttribute<IncludeGeoLocationAttribute>() != null)
             {

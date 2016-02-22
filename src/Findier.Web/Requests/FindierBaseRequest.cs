@@ -4,7 +4,7 @@ using Findier.Web.Responses;
 
 namespace Findier.Web.Requests
 {
-    public abstract class FindierBaseRequest : RestRequestObject<FindierBaseResponse>
+    public abstract class FindierBaseRequest : RestRequestObject<FindierResponse>
     {
         protected FindierBaseRequest(string path)
         {
@@ -12,7 +12,7 @@ namespace Findier.Web.Requests
         }
     }
 
-    public abstract class FindierBaseRequest<T> : RestRequestObject<FindierBaseResponse<T>>
+    public abstract class FindierBaseRequest<T> : RestRequestObject<FindierResponse<T>>
     {
         protected FindierBaseRequest(string path)
         {

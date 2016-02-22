@@ -14,7 +14,7 @@ namespace Findier.Client.Windows.IncrementalLoading
     {
         private readonly IFindierService _findierService;
         private readonly GetPostCommentsRequest _request;
-        private FindierBaseResponse<FindierPageData<Comment>> _currentResponse;
+        private FindierResponse<FindierPageData<Comment>> _currentResponse;
 
         public CommentCollection(GetPostCommentsRequest request, IFindierService findierService)
         {
@@ -74,7 +74,7 @@ namespace Findier.Client.Windows.IncrementalLoading
                 Request = collection._request;
             }
 
-            public FindierBaseResponse<FindierPageData<Comment>> CurrentResponse { get; set; }
+            public FindierResponse<FindierPageData<Comment>> CurrentResponse { get; set; }
 
             public List<Comment> Items { get; set; }
 

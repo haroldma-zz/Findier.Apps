@@ -2,9 +2,9 @@ using Findier.Web.Extensions;
 
 namespace Findier.Web.Requests
 {
-    public class UpVoteCommentRequest : FindierBaseRequest
+    public class UpvoteCommentRequest : FindierBaseRequest
     {
-        public UpVoteCommentRequest(string id, string commentId, bool add) : base("posts/{id}/comments/{commentId}/ups")
+        public UpvoteCommentRequest(string id, bool add) : base("comments/{id}/ups")
         {
             if (add)
             {
@@ -14,7 +14,7 @@ namespace Findier.Web.Requests
             {
                 this.Delete();
             }
-            this.Parameter(nameof(id), id).Parameter(nameof(commentId), commentId);
+            this.Segment(nameof(id), id);
         }
     }
 }

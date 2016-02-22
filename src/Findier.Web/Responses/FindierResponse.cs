@@ -1,11 +1,11 @@
 ﻿namespace Findier.Web.Responses
 {
-    public class FindierBaseResponse
+    public class FindierResponse
     {
         public string Error { get; set; }
     }
 
-    public class FindierBaseResponse<T> : FindierBaseResponse
+    public class FindierResponse<T> : FindierResponse
     {
         public T Data { get; set; }
     }
