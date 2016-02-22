@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows", "Windows", "{EBFE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Findier.Core.Windows", "src\Windows\Findier.Core.Windows\Findier.Core.Windows.csproj", "{EBE59FF0-A671-4EDE-82AF-E5A473E30133}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Findier.Client.Windows", "src\Windows\Findier.Client.Windows\Findier.Client.Windows.csproj", "{575B5474-5B9A-4F2D-B100-916F0FF37D71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Findier.Windows", "src\Windows\Findier.Windows\Findier.Windows.csproj", "{575B5474-5B9A-4F2D-B100-916F0FF37D71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
