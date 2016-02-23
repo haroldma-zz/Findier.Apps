@@ -2,7 +2,7 @@
 using Windows.UI.Xaml.Controls;
 using Microsoft.Xaml.Interactivity;
 
-namespace Findier.Client.Windows.Engine.Behaviors
+namespace Findier.Windows.Engine.Behaviors
 {
     public class FocusAction : DependencyObject, IAction
     {

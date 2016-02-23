@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using Findier.Core.Utilities.Interfaces;
 
-namespace Findier.Client.Windows.Engine.Bootstrppers
+namespace Findier.Windows.Engine.Bootstrppers
 {
     internal class ApplicationBootstrapper : AppBootStrapper
     {

@@ -2,11 +2,11 @@
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.UI.Xaml.Navigation;
-using Findier.Client.Windows.Engine.Navigation;
 using Findier.Core.Utilities.Interfaces;
+using Findier.Windows.Engine.Navigation;
 using Newtonsoft.Json;
 
-namespace Findier.Client.Windows.Engine.Mvvm
+namespace Findier.Windows.Engine.Mvvm
 {
     // DOCS: https://github.com/Windows-XAML/Template10/wiki/Docs-%7C-MVVM
     public abstract class ViewModelBase : BindableBase, INavigable

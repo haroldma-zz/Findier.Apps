@@ -2,7 +2,7 @@
 using Windows.System;
 using Windows.UI.Core;
 
-namespace Findier.Client.Windows.Engine.KeyboardService
+namespace Findier.Windows.Engine.KeyboardService
 {
     // DOCS: https://github.com/Windows-XAML/Template10/wiki/Docs-%7C-KeyboardService
     public class KeyboardEventArgs : EventArgs

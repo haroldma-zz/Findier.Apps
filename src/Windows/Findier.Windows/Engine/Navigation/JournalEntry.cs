@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Findier.Client.Windows.Engine.Navigation
+namespace Findier.Windows.Engine.Navigation
 {
     public class JournalEntry
     {

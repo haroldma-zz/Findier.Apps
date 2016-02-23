@@ -5,10 +5,10 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
-using Findier.Client.Windows.Common;
-using Findier.Client.Windows.Tools;
+using Findier.Windows.Common;
+using Findier.Windows.Tools;
 
-namespace Findier.Client.Windows.Controls
+namespace Findier.Windows.Controls
 {
     public class AlternatingRowListView : ScrollListView
     {

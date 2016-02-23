@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
 
-namespace Findier.Client.Windows.Engine
+namespace Findier.Windows.Engine
 {
     public class ObservableItemCollection<T> : ObservableCollection<T>, IDisposable where T : INotifyPropertyChanged
     {

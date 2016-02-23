@@ -1,7 +1,7 @@
 ﻿using Windows.UI;
 using Windows.UI.Xaml.Media;
 
-namespace Findier.Client.Windows.Engine.Utils
+namespace Findier.Windows.Engine.Utils
 {
     public static class ColorUtils
     {

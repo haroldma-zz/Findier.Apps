@@ -2,13 +2,14 @@
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
-using Findier.Client.Windows.Common;
-using Findier.Client.Windows.Views;
 using Findier.Core.Utilities.Interfaces;
 using Findier.Web.Services;
+using Findier.Windows.Common;
+using Findier.Windows.Engine;
+using Findier.Windows.Views;
 using Microsoft.ApplicationInsights;
 
-namespace Findier.Client.Windows
+namespace Findier.Windows
 {
     sealed partial class App
     {
@@ -37,7 +38,7 @@ namespace Findier.Client.Windows
         }
 
         // runs only when not restored from state
-        public override Task OnStartAsync(StartKind startKind, IActivatedEventArgs args)
+        public override Task OnStartAsync(BootStrapper.StartKind startKind, IActivatedEventArgs args)
         {
             var findierService = Kernel.Resolve<IFindierService>();
             var applicationUtility = Kernel.Resolve<IApplicationUtility>();

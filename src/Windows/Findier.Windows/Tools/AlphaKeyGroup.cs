@@ -8,7 +8,7 @@ using Windows.UI.Xaml;
 using Findier.Core.Common;
 using Findier.Core.Extensions;
 
-namespace Findier.Client.Windows.Tools
+namespace Findier.Windows.Tools
 {
     public class AlphaKeyGroup : OptimizedObservableCollection<object>
     {

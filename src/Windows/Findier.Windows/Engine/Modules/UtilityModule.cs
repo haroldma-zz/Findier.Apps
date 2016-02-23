@@ -1,11 +1,11 @@
 ﻿using Autofac;
-using Findier.Client.Windows.Utilities;
 using Findier.Core.Utilities.DesignTime;
 using Findier.Core.Utilities.Interfaces;
 using Findier.Core.Utilities.RunTime;
 using Findier.Core.Windows.Utilities;
+using Findier.Windows.Utilities;
 
-namespace Findier.Client.Windows.Engine.Modules
+namespace Findier.Windows.Engine.Modules
 {
     internal class UtilityModule : AppModule
     {

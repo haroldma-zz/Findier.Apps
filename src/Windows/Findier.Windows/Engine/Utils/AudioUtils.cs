@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Windows.Media.Capture;
 
-namespace Findier.Client.Windows.Engine.Utils
+namespace Findier.Windows.Engine.Utils
 {
     public static class AudioUtils
     {

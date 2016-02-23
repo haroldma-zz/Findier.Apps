@@ -2,7 +2,7 @@
 using Windows.UI.Xaml;
 using Microsoft.Xaml.Interactivity;
 
-namespace Findier.Client.Windows.Interactions
+namespace Findier.Windows.Interactions
 {
     /// <summary>
     ///     An action that switches the current visual to the specified <see cref="T:Windows.UI.Xaml.Controls.Page" />.

@@ -1,7 +1,7 @@
 ﻿using System;
 using Windows.UI.Xaml.Data;
 
-namespace Findier.Client.Windows.Tools.Converters
+namespace Findier.Windows.Tools.Converters
 {
     public class UpperCaseConverter : IValueConverter
     {

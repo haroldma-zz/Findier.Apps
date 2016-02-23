@@ -4,7 +4,7 @@ using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Microsoft.Xaml.Interactivity;
 
-namespace Findier.Client.Windows.Engine.Behaviors
+namespace Findier.Windows.Engine.Behaviors
 {
     public class MessageDialogAction : DependencyObject, IAction
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Findier.Client.Windows.Engine
+namespace Findier.Windows.Engine
 {
     public class ItemPropertyChangedEventArgs
     {

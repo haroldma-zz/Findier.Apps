@@ -1,9 +1,9 @@
 using System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Findier.Client.Windows.Extensions;
+using Findier.Windows.Extensions;
 
-namespace Findier.Client.Windows.Common
+namespace Findier.Windows.Common
 {
     public class ScrollListView : ListView
     {

@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Findier.Client.Windows.Engine.Utils;
+using Findier.Windows.Engine.Utils;
 using Microsoft.Xaml.Interactivity;
 
-namespace Findier.Client.Windows.Engine.Behaviors
+namespace Findier.Windows.Engine.Behaviors
 {
     // DOCS: https://github.com/Windows-XAML/Template10/wiki/Docs-%7C-XamlBehaviors
     [TypeConstraint(typeof(CommandBar))]

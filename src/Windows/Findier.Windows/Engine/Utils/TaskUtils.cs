@@ -1,4 +1,4 @@
-﻿namespace Findier.Client.Windows.Engine.Utils
+﻿namespace Findier.Windows.Engine.Utils
 {
     public static class TaskUtils
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace Findier.Client.Windows.Engine.Mvvm
+namespace Findier.Windows.Engine.Mvvm
 {
     // http://codepaste.net/jgxazh
     

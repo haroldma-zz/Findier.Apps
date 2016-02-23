@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Findier.Client.Windows.Engine
+namespace Findier.Windows.Engine
 {
     public interface IStateItems
     {

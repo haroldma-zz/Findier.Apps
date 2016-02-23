@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Autofac;
 
-namespace Findier.Client.Windows.Engine.Bootstrppers
+namespace Findier.Windows.Engine.Bootstrppers
 {
     public interface IBootStrapper
     {

@@ -36,7 +36,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 
-namespace Findier.Client.Windows.Common
+namespace Findier.Windows.Common
 {
     public class CurtainPrompt
     {

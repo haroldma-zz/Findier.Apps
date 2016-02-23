@@ -5,7 +5,7 @@ using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace Findier.Client.Windows.Extensions
+namespace Findier.Windows.Extensions
 {
     /// <summary>
     ///     Handy extension for items controls (listview, gridview, etc).

@@ -4,7 +4,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Shapes;
 
-namespace Findier.Client.Windows.Controls
+namespace Findier.Windows.Controls
 {
     public class PieSlice : Path
     {

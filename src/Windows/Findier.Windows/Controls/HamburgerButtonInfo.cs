@@ -2,9 +2,9 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Markup;
-using Findier.Client.Windows.Engine.Mvvm;
+using Findier.Windows.Engine.Mvvm;
 
-namespace Findier.Client.Windows.Controls
+namespace Findier.Windows.Controls
 {
     [ContentProperty(Name = nameof(Content))]
     public class HamburgerButtonInfo : DependencyBindableBase

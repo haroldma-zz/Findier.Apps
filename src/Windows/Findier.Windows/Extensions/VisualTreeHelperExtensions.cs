@@ -5,7 +5,7 @@ using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 
-namespace Findier.Client.Windows.Extensions
+namespace Findier.Windows.Extensions
 {
     /// <summary>
     /// Extends the VisualTreeHelper class.

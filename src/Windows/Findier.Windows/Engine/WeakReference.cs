@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Findier.Client.Windows.Engine
+namespace Findier.Windows.Engine
 {
     public class WeakReference<TInstance, TSource, TEventArgs> where TInstance : class
     {

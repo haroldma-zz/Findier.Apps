@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.ApplicationInsights;
 
-namespace Findier.Client.Windows.Services
+namespace Findier.Windows.Services
 {
     internal interface IInsightsService
     {

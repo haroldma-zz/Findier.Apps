@@ -2,7 +2,7 @@
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace Findier.Client.Windows.Tools.Converters
+namespace Findier.Windows.Tools.Converters
 {
     internal class ImageSourceConverter : IValueConverter
     {

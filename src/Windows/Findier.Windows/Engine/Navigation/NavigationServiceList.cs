@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Findier.Client.Windows.Engine.Navigation
+namespace Findier.Windows.Engine.Navigation
 {
     public class NavigationServiceList : List<INavigationService>
     {

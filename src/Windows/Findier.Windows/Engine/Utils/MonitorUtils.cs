@@ -5,7 +5,7 @@ using Windows.Devices.Input;
 using Windows.Graphics.Display;
 using Windows.UI.ViewManagement;
 
-namespace Findier.Client.Windows.Engine.Utils
+namespace Findier.Windows.Engine.Utils
 {
     public class MonitorUtils
     {

@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using Windows.UI.Xaml.Navigation;
-using Findier.Client.Windows.Common;
-using Findier.Client.Windows.Engine.Mvvm;
-using Findier.Client.Windows.IncrementalLoading;
-using Findier.Client.Windows.Views;
 using Findier.Web.Models;
 using Findier.Web.Requests;
 using Findier.Web.Services;
+using Findier.Windows.Common;
+using Findier.Windows.Engine.Mvvm;
+using Findier.Windows.IncrementalLoading;
+using Findier.Windows.Views;
 
-namespace Findier.Client.Windows.ViewModels
+namespace Findier.Windows.ViewModels
 {
     public class PostViewModel : ViewModelBase
     {

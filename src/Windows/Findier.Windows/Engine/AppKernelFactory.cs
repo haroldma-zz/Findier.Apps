@@ -1,8 +1,8 @@
 ﻿using Autofac;
-using Findier.Client.Windows.Engine.Bootstrppers;
-using Findier.Client.Windows.Engine.Modules;
+using Findier.Windows.Engine.Bootstrppers;
+using Findier.Windows.Engine.Modules;
 
-namespace Findier.Client.Windows.Engine
+namespace Findier.Windows.Engine
 {
     internal static class AppKernelFactory
     {

@@ -2,7 +2,7 @@ using System;
 using Autofac;
 using Autofac.Builder;
 
-namespace Findier.Client.Windows.Engine.Providers
+namespace Findier.Windows.Engine.Providers
 {
     public static class ProviderHelper
     {

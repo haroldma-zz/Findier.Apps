@@ -3,7 +3,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Markup;
 using Microsoft.Xaml.Interactivity;
 
-namespace Findier.Client.Windows.Engine.Behaviors
+namespace Findier.Windows.Engine.Behaviors
 {
     // DOCS: https://github.com/Windows-XAML/Template10/wiki/Docs-%7C-XamlBehaviors
     [ContentProperty(Name = nameof(Actions))]

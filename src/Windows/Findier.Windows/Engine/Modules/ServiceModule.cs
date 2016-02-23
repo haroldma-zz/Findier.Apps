@@ -1,9 +1,9 @@
 ﻿using Autofac;
-using Findier.Client.Windows.Engine.Navigation;
-using Findier.Client.Windows.Services;
 using Findier.Web.Services;
+using Findier.Windows.Engine.Navigation;
+using Findier.Windows.Services;
 
-namespace Findier.Client.Windows.Engine.Modules
+namespace Findier.Windows.Engine.Modules
 {
     internal class ServiceModule : AppModule
     {

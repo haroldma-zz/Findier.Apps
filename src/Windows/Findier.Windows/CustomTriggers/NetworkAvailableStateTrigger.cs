@@ -3,7 +3,7 @@ using Windows.Networking.Connectivity;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 
-namespace Findier.Client.Windows.CustomTriggers
+namespace Findier.Windows.CustomTriggers
 {
     public class NetworkAvailableStateTrigger : StateTriggerBase
     {

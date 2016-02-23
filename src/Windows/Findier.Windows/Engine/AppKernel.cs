@@ -4,11 +4,11 @@ using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Autofac;
-using Findier.Client.Windows.Engine.Bootstrppers;
-using Findier.Client.Windows.Services;
 using Findier.Core.Utilities.Interfaces;
+using Findier.Windows.Engine.Bootstrppers;
+using Findier.Windows.Services;
 
-namespace Findier.Client.Windows.Engine
+namespace Findier.Windows.Engine
 {
     public class AppKernel
     {

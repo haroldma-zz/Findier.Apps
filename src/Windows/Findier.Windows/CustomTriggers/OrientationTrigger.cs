@@ -6,9 +6,9 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
 using Windows.UI.Xaml;
-using Findier.Client.Windows.Common;
+using Findier.Windows.Common;
 
-namespace Findier.Client.Windows.CustomTriggers
+namespace Findier.Windows.CustomTriggers
 {
     /// <summary>
     ///     Enables a state if an Object is <c>null</c> or a String/IEnumerable is empty

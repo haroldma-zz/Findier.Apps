@@ -1,7 +1,7 @@
 ﻿using Windows.UI.Xaml;
 using Findier.Core.Windows.Helpers;
 
-namespace Findier.Client.Windows.CustomTriggers
+namespace Findier.Windows.CustomTriggers
 {
     public class DeviceFamilyTrigger : StateTriggerBase
     {

@@ -2,9 +2,9 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
-using Findier.Client.Windows.Engine;
+using Findier.Windows.Engine;
 
-namespace Findier.Client.Windows.Controls
+namespace Findier.Windows.Controls
 {
     public sealed class ModalDialog : ContentControl
     {

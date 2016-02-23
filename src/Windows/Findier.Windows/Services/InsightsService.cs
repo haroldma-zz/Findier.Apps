@@ -4,7 +4,7 @@ using System.Diagnostics;
 using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.DataContracts;
 
-namespace Findier.Client.Windows.Services
+namespace Findier.Windows.Services
 {
     internal class InsightsService : IInsightsService
     {

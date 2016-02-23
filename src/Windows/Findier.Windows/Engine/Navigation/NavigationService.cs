@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Navigation;
 using Findier.Core.Utilities.Interfaces;
 using Findier.Core.Windows.Utilities;
 
-namespace Findier.Client.Windows.Engine.Navigation
+namespace Findier.Windows.Engine.Navigation
 {
     // DOCS: https://github.com/Windows-XAML/Template10/wiki/Docs-%7C-NavigationService
     public class NavigationService : INavigationService

@@ -1,7 +1,7 @@
 ﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace Findier.Client.Windows.Tools.Converters
+namespace Findier.Windows.Tools.Converters
 {
     public class BooleanTemplateSelector : DataTemplateSelector
     {

@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 
-namespace Findier.Client.Windows.Common
+namespace Findier.Windows.Common
 {
     /// <summary>
     ///     A base class that can monitor any event in a generic way.

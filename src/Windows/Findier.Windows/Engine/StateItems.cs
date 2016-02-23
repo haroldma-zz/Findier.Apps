@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Findier.Client.Windows.Engine
+namespace Findier.Windows.Engine
 {
     public class StateItems : Dictionary<StateItemKey, Object>, IStateItems
     {

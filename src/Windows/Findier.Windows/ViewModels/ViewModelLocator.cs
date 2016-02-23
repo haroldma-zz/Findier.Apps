@@ -1,6 +1,6 @@
-﻿using Findier.Client.Windows.Engine;
+﻿using Findier.Windows.Engine;
 
-namespace Findier.Client.Windows.ViewModels
+namespace Findier.Windows.ViewModels
 {
     internal class ViewModelLocator
     {
@@ -13,6 +13,8 @@ namespace Findier.Client.Windows.ViewModels
         public LoginViewModel Login => Kernel.Resolve<LoginViewModel>();
 
         public MainViewModel Main => Kernel.Resolve<MainViewModel>();
+
+        public NewPostViewModel NewPost => Kernel.Resolve<NewPostViewModel>();
 
         public PostViewModel Post => Kernel.Resolve<PostViewModel>();
 

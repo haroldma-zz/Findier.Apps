@@ -4,10 +4,10 @@ using System.Linq;
 using Windows.Graphics.Display;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
-using Findier.Client.Windows.Engine.Navigation;
 using Findier.Core.Utilities.Interfaces;
+using Findier.Windows.Engine.Navigation;
 
-namespace Findier.Client.Windows.Engine
+namespace Findier.Windows.Engine
 {
     // DOCS: https://github.com/Windows-XAML/Template10/wiki/Docs-%7C-WindowWrapper
     public class WindowWrapper

@@ -1,6 +1,6 @@
 ﻿using Windows.UI.Xaml;
 
-namespace Findier.Client.Windows.CustomTriggers
+namespace Findier.Windows.CustomTriggers
 {
     public class ControlSizeTrigger : StateTriggerBase
     {

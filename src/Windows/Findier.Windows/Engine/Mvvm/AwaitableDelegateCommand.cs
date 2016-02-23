@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
 
-namespace Findier.Client.Windows.Engine.Mvvm
+namespace Findier.Windows.Engine.Mvvm
 {
     public class AwaitableDelegateCommand : System.Windows.Input.ICommand
 	{

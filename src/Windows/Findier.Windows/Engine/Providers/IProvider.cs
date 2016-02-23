@@ -1,6 +1,6 @@
 ﻿using Autofac;
 
-namespace Findier.Client.Windows.Engine.Providers
+namespace Findier.Windows.Engine.Providers
 {
     public interface IProvider<out T>
     {

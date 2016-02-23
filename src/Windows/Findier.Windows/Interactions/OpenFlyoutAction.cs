@@ -2,7 +2,7 @@
 using Windows.UI.Xaml.Controls.Primitives;
 using Microsoft.Xaml.Interactivity;
 
-namespace Findier.Client.Windows.Interactions
+namespace Findier.Windows.Interactions
 {
     public class OpenFlyoutAction : DependencyObject, IAction
     {

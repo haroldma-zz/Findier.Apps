@@ -1,7 +1,7 @@
 ﻿using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-namespace Findier.Client.Windows.Engine.Navigation
+namespace Findier.Windows.Engine.Navigation
 {
     // DOCS: https://github.com/Windows-XAML/Template10/wiki/Docs-%7C-NavigationService
     public class NavigatingEventArgs: NavigatedEventArgs

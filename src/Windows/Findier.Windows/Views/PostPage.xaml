@@ -1,11 +1,10 @@
 ﻿<Page
-    x:Class="Findier.Client.Windows.Views.PostPage"
+    x:Class="Findier.Windows.Views.PostPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Findier.Client.Windows.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:controls="using:Findier.Client.Windows.Controls"
+    xmlns:controls="using:Findier.Windows.Controls"
     mc:Ignorable="d"
     DataContext="{Binding Post, Source={StaticResource ViewModelLocator}}">
 
@@ -25,7 +24,7 @@
                                                ActionButtonCommand="{Binding MessageCommand}">
                             <StackPanel>
                                 <TextBlock Text="{Binding Post.Title}" TextWrapping="Wrap" FontSize="20" Margin="0,0,0,10" />
-                                <TextBlock Text="{Binding Post.Text}" TextWrapping="Wrap" />
+                                <TextBlock Text="{Binding Post.Text}" TextWrapping="Wrap" Visibility="{Binding Post.Text, Converter={StaticResource NullToVisibilityConverter}}" />
                             </StackPanel>
                         </controls:MaterialCard>
                         <TextBlock Text="Comments" Margin="10" FontSize="20" />

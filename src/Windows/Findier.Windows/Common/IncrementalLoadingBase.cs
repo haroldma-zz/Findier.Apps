@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Xaml.Data;
 
-namespace Findier.Client.Windows.Common
+namespace Findier.Windows.Common
 {
     public abstract class IncrementalLoadingBase<T> : ObservableCollection<T>, ISupportIncrementalLoading
     {

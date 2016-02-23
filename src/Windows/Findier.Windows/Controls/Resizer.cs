@@ -9,7 +9,7 @@ using Windows.UI.Xaml.Media;
 
 // The Templated Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234235
 
-namespace Findier.Client.Windows.Controls
+namespace Findier.Windows.Controls
 {
     [TemplatePart(Name = PART_ROOT_NAME, Type = typeof(Grid))]
     [TemplatePart(Name = PART_THUMB_NAME, Type = typeof(Thumb))]

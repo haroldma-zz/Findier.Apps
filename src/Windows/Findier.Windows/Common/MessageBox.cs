@@ -6,7 +6,7 @@ using Windows.UI.Popups;
 
 #endregion
 
-namespace Findier.Client.Windows.Common
+namespace Findier.Windows.Common
 {
     public static class MessageBox
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using Windows.ApplicationModel;
-using Findier.Client.Windows.Extensions;
 using Findier.Core.Utilities.Interfaces;
+using Findier.Windows.Extensions;
 
-namespace Findier.Client.Windows.Utilities
+namespace Findier.Windows.Utilities
 {
     internal class ApplicationUtility : IApplicationUtility
     {

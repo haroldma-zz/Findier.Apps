@@ -1,10 +1,10 @@
 ﻿using System.Reflection;
 using Autofac;
-using Findier.Client.Windows.Engine.Mvvm;
 using Findier.Core.Extensions;
+using Findier.Windows.Engine.Mvvm;
 using Module = Autofac.Module;
 
-namespace Findier.Client.Windows.Engine.Modules
+namespace Findier.Windows.Engine.Modules
 {
     internal class ViewModelModule : Module
     {

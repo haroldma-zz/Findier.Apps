@@ -4,7 +4,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Microsoft.Xaml.Interactivity;
 
-namespace Findier.Client.Windows.Interactions
+namespace Findier.Windows.Interactions
 {
     public sealed class CloseFlyoutAction : DependencyObject, IAction
     {

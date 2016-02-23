@@ -2,13 +2,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Findier.Client.Windows.Common;
 using Findier.Web.Models;
 using Findier.Web.Requests;
 using Findier.Web.Responses;
 using Findier.Web.Services;
+using Findier.Windows.Common;
 
-namespace Findier.Client.Windows.IncrementalLoading
+namespace Findier.Windows.IncrementalLoading
 {
     public class CommentCollection : IncrementalLoadingBase<Comment>
     {

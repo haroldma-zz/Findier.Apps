@@ -2,7 +2,7 @@ using System.Collections.ObjectModel;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace Findier.Client.Windows.Extensions
+namespace Findier.Windows.Extensions
 {
     /// <summary>
     ///     Extension methods and attached properties for the ListView class.

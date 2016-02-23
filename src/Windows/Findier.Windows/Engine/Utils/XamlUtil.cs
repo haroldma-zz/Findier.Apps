@@ -4,7 +4,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 
-namespace Findier.Client.Windows.Engine.Utils
+namespace Findier.Windows.Engine.Utils
 {
     // DOCS: https://github.com/Windows-XAML/Template10/wiki/Docs-%7C-XamlHelper
     public static class XamlUtil

@@ -1,5 +1,5 @@
 ﻿// http://metronuggets.com/2015/05/18/introducing-mdl2-helpers/
-namespace Findier.Client.Windows.Engine
+namespace Findier.Windows.Engine
 {
     public class Mdl2
     {

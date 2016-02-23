@@ -16,9 +16,9 @@ using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Markup;
-using Findier.Client.Windows.Engine.Navigation;
+using Findier.Windows.Engine.Navigation;
 
-namespace Findier.Client.Windows.Engine
+namespace Findier.Windows.Engine
 {
     public abstract class BootStrapper : Application
     {

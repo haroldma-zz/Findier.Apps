@@ -3,7 +3,7 @@ using Windows.UI;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
 
-namespace Findier.Client.Windows.Tools.Converters
+namespace Findier.Windows.Tools.Converters
 {
     public class BoolToColorBrushConverter : IValueConverter
     {

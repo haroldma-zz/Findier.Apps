@@ -3,7 +3,7 @@ using Windows.UI.Xaml.Markup;
 using Findier.Core.Utilities.Interfaces;
 using Microsoft.Xaml.Interactivity;
 
-namespace Findier.Client.Windows.Engine.Behaviors
+namespace Findier.Windows.Engine.Behaviors
 {
     [ContentProperty(Name = nameof(Actions))]
     public class BackButtonBehavior : DependencyObject, IBehavior

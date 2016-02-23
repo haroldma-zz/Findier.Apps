@@ -2,7 +2,7 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace Findier.Client.Windows.Controls
+namespace Findier.Windows.Controls
 {
     public class MaterialCard : ContentControl
     {

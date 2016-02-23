@@ -1,7 +1,7 @@
 using System;
 using Windows.ApplicationModel;
 
-namespace Findier.Client.Windows.Extensions
+namespace Findier.Windows.Extensions
 {
     public static class PackageVersionExtensions
     {

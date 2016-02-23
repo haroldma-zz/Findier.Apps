@@ -5,7 +5,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 using Findier.Core.Utilities.Interfaces;
 
-namespace Findier.Client.Windows.Engine.Navigation
+namespace Findier.Windows.Engine.Navigation
 {
     public class DesignNavigationService : INavigationService
     {

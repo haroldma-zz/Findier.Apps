@@ -4,7 +4,7 @@ using Windows.UI.Xaml.Markup;
 
 // The Templated Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234235
 
-namespace Findier.Client.Windows.Controls
+namespace Findier.Windows.Controls
 {
     [ContentProperty(Name = nameof(PrimaryCommands))]
     public sealed class PageHeader : CommandBar

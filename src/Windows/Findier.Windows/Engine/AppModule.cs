@@ -1,7 +1,7 @@
 ﻿using Windows.ApplicationModel;
 using Autofac;
 
-namespace Findier.Client.Windows.Engine
+namespace Findier.Windows.Engine
 {
     public abstract class AppModule : Module
     {

@@ -10,12 +10,12 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Markup;
 using Windows.UI.Xaml.Media;
-using Findier.Client.Windows.Engine;
-using Findier.Client.Windows.Engine.KeyboardService;
-using Findier.Client.Windows.Engine.Mvvm;
-using Findier.Client.Windows.Engine.Navigation;
+using Findier.Windows.Engine;
+using Findier.Windows.Engine.KeyboardService;
+using Findier.Windows.Engine.Mvvm;
+using Findier.Windows.Engine.Navigation;
 
-namespace Findier.Client.Windows.Controls
+namespace Findier.Windows.Controls
 {
     // DOCS: https://github.com/Windows-XAML/Template10/wiki/Docs-%7C-HamburgerMenu
     [ContentProperty(Name = nameof(PrimaryButtons))]

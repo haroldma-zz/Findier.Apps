@@ -5,7 +5,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Markup;
 using Microsoft.Xaml.Interactivity;
 
-namespace Findier.Client.Windows.Interactions
+namespace Findier.Windows.Interactions
 {
     [ContentProperty(Name = "Actions")]
     [TypeConstraint(typeof (TextBox))]

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Windows.UI.Xaml.Navigation;
-using Findier.Client.Windows.Engine.Mvvm;
-using Findier.Client.Windows.Views;
+using Findier.Windows.Engine.Mvvm;
+using Findier.Windows.Views;
 
-namespace Findier.Client.Windows.ViewModels
+namespace Findier.Windows.ViewModels
 {
     public class AuthenticationViewModel : ViewModelBase
     {

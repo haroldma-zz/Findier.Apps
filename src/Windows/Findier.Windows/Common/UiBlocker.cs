@@ -7,7 +7,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 
-namespace Findier.Client.Windows.Common
+namespace Findier.Windows.Common
 {
     public class UiBlocker : IDisposable
     {

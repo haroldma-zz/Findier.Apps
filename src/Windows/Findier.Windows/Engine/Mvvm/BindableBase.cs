@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using Windows.UI.Xaml;
 
-namespace Findier.Client.Windows.Engine.Mvvm
+namespace Findier.Windows.Engine.Mvvm
 {
     // DOCS: https://github.com/Windows-XAML/Template10/wiki/Docs-%7C-MVVM
     public abstract class BindableBase : IBindable

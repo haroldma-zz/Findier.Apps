@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using Windows.UI.Xaml.Controls;
 
-namespace Findier.Client.Windows.Extensions
+namespace Findier.Windows.Extensions
 {
     /// <summary>
     ///     Handles synchronization of ListViewExtensions.BindableSelection to a ListView.

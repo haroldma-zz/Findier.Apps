@@ -2,7 +2,7 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Input;
 
-namespace Findier.Client.Windows.CustomTriggers
+namespace Findier.Windows.CustomTriggers
 {
     public class InputTypeTrigger : StateTriggerBase
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace Findier.Client.Windows.Common
+namespace Findier.Windows.Common
 {
     public class ColorThief
     {

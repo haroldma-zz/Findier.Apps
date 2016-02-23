@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Windows.UI.Xaml;
 
-namespace Findier.Client.Windows.Tools
+namespace Findier.Windows.Tools
 {
     public class ActualSizePropertyProxy : FrameworkElement, INotifyPropertyChanged
     {

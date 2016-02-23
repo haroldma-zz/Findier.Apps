@@ -1,12 +1,12 @@
-﻿<UserControl x:Class="Findier.Client.Windows.Controls.HamburgerMenu"
+﻿<UserControl x:Class="Findier.Windows.Controls.HamburgerMenu"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:core="using:Microsoft.Xaml.Interactions.Core"
              xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:behaviors="using:Findier.Client.Windows.Engine.Behaviors"
-             xmlns:controls="using:Findier.Client.Windows.Controls"
+             xmlns:behaviors="using:Findier.Windows.Engine.Behaviors"
+             xmlns:controls="using:Findier.Windows.Controls"
              x:Name="ThisPage" d:DesignHeight="400"
              d:DesignWidth="400" mc:Ignorable="d">
 

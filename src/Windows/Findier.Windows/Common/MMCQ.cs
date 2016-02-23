@@ -5,7 +5,7 @@ using Windows.UI;
 using Findier.Core.Extensions;
 using Findier.Core.Windows.Extensions;
 
-namespace Findier.Client.Windows.Common
+namespace Findier.Windows.Common
 {
     // ReSharper disable once InconsistentNaming
     public class MMCQ

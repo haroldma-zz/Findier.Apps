@@ -1,4 +1,4 @@
-﻿namespace Findier.Client.Windows.Views
+﻿namespace Findier.Windows.Views
 {
     public sealed partial class PostPage
     {

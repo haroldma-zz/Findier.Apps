@@ -1,4 +1,4 @@
-﻿namespace Findier.Client.Windows.Engine.Navigation
+﻿namespace Findier.Windows.Engine.Navigation
 {
     internal class AlternativeNavigationEventArgs
     {

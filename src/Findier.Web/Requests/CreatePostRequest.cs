@@ -12,14 +12,16 @@ namespace Findier.Web.Requests
             string title,
             string text,
             PostType type,
-            double price = 0) : base("posts")
+            decimal price = 0,
+            bool isNsfw = false) : base("posts")
         {
             this.Post()
                 .Parameter(nameof(finboardId), finboardId)
                 .Parameter(nameof(title), title)
                 .Parameter(nameof(text), text)
                 .Parameter(nameof(type), type.ToString())
-                .Parameter(nameof(price), price.ToString());
+                .Parameter(nameof(price), price.ToString())
+                .Parameter(nameof(isNsfw), isNsfw.ToString());
         }
 
         public override string ToDummyData()

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Windows.Foundation.Collections;
-using Findier.Client.Windows.Engine.Utils;
+using Findier.Windows.Engine.Utils;
 
-namespace Findier.Client.Windows.Engine
+namespace Findier.Windows.Engine
 {
     public class ObservableDictionary<K, V> : IObservableMap<K, V>
     {

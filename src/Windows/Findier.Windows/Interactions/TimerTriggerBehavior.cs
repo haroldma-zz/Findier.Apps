@@ -4,7 +4,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Markup;
 using Microsoft.Xaml.Interactivity;
 
-namespace Findier.Client.Windows.Interactions
+namespace Findier.Windows.Interactions
 {
     [ContentProperty(Name = "Actions")]
     public sealed class TimerTriggerBehavior : DependencyObject, IBehavior
