@@ -15,10 +15,12 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <controls:PageHeader Text="Finboards">
+        <controls:PageHeader Text="Home">
             <controls:PageHeader.SecondaryCommands>
+                <AppBarButton Label="Contact us" Command="{Binding ContactCommand}" />
+                <AppBarButton Label="Review" Command="{Binding ReviewCommand}" />
                 <AppBarButton Label="Login/Register" Command="{Binding LoginCommand}" Visibility="{Binding FindierService.IsAuthenticated, Converter={StaticResource ReverseVisibilityConverter}}" />
-                <AppBarButton Label="Logout" Command="{Binding LogoutCommand}" Visibility="{Binding FindierService.IsAuthenticated, Converter={StaticResource VisibilityConverter}}" />
+                <AppBarButton Label="Logout" Foreground="Red" Command="{Binding LogoutCommand}" Visibility="{Binding FindierService.IsAuthenticated, Converter={StaticResource VisibilityConverter}}" />
             </controls:PageHeader.SecondaryCommands>
         </controls:PageHeader>
         <ListView Grid.Row="1" Padding="0,5,0,0" ItemsSource="{Binding FinboardCollection}" IsItemClickEnabled="True" SelectionMode="None">

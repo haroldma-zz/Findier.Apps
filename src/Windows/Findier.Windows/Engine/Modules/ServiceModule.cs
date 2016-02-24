@@ -16,9 +16,9 @@ namespace Findier.Windows.Engine.Modules
 
         public override void LoadRunTime(ContainerBuilder builder)
         {
-            builder.RegisterType<InsightsService>().As<IInsightsService>();
+            builder.RegisterType<InsightsService>().As<IInsightsService>().SingleInstance();
             builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstance();
-            builder.RegisterType<FindierService>().As<IFindierService>();
+            builder.RegisterType<FindierService>().As<IFindierService>().SingleInstance();
         }
     }
 }
