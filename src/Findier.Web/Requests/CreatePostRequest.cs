@@ -13,7 +13,10 @@ namespace Findier.Web.Requests
             string text,
             PostType type,
             decimal price = 0,
-            bool isNsfw = false) : base("posts")
+            bool isNsfw = false,
+            bool canMessage = true,
+            string email = null,
+            string phoneNumber = null) : base("posts")
         {
             this.Post()
                 .Parameter(nameof(finboardId), finboardId)
@@ -21,7 +24,10 @@ namespace Findier.Web.Requests
                 .Parameter(nameof(text), text)
                 .Parameter(nameof(type), type.ToString())
                 .Parameter(nameof(price), price.ToString())
-                .Parameter(nameof(isNsfw), isNsfw.ToString());
+                .Parameter(nameof(isNsfw), isNsfw.ToString())
+                .Parameter(nameof(canMessage), canMessage.ToString())
+                .Parameter(nameof(email), email)
+                .Parameter(nameof(phoneNumber), phoneNumber);
         }
 
         public override string ToDummyData()

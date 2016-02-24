@@ -20,7 +20,7 @@ namespace Findier.Windows.ViewModels
         {
             _findierService = findierService;
 
-            MessageCommand = new DelegateCommand(MessageExecute);
+            ContactCommand = new DelegateCommand(MessageExecute);
 
             if (IsInDesignMode)
             {
@@ -40,7 +40,7 @@ namespace Findier.Windows.ViewModels
             }
         }
 
-        public DelegateCommand MessageCommand { get; }
+        public DelegateCommand ContactCommand { get; }
 
         public Post Post
         {

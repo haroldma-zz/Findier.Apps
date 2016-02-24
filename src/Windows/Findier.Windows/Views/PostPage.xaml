@@ -19,9 +19,9 @@
                 <DataTemplate>
                     <StackPanel>
                         <controls:MaterialCard HeaderText="{Binding Post.HeaderText}" 
-                                               ActionButtonText="Message" 
+                                               ActionButtonText="Contact" 
                                                ActionButtonVisibility="Visible"
-                                               ActionButtonCommand="{Binding MessageCommand}">
+                                               ActionButtonCommand="{Binding ContactCommand}">
                             <StackPanel>
                                 <TextBlock Text="{Binding Post.Title}" TextWrapping="Wrap" FontSize="20" Margin="0,0,0,10" />
                                 <TextBlock Text="{Binding Post.Text}" TextWrapping="Wrap" Visibility="{Binding Post.Text, Converter={StaticResource NullToVisibilityConverter}}" />
