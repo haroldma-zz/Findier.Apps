@@ -15,8 +15,15 @@
         </Grid.RowDefinitions>
         <controls:PageHeader Text="Post">
             <controls:PageHeader.PrimaryCommands>
+                <AppBarButton Icon="Edit" Label="Edit"  Visibility="{Binding CanEdit, Converter={StaticResource VisibilityConverter}}"
+                              Command="{Binding EditCommand}" />
                 <AppBarButton Icon="Comment" Label="New comment" Command="{Binding NewCommentCommand}" />
             </controls:PageHeader.PrimaryCommands>
+            <controls:PageHeader.SecondaryCommands>
+                <AppBarButton Label="Delete" Visibility="{Binding CanEdit, Converter={StaticResource VisibilityConverter}}"
+                              Foreground="Red"
+                              Command="{Binding DeleteCommand}" />
+            </controls:PageHeader.SecondaryCommands>
         </controls:PageHeader>
         <ListView Grid.Row="1" Padding="0, 5, 0, 0" IsItemClickEnabled="True" SelectionMode="None" ItemsSource="{Binding CommentCollection}">
             <ListView.HeaderTemplate>

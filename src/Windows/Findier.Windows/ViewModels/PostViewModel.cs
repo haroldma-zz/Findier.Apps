@@ -19,6 +19,7 @@ namespace Findier.Windows.ViewModels
     {
         private readonly IFindierService _findierService;
         private readonly IInsightsService _insightsService;
+        private bool _canEdit;
         private CommentCollection _commentCollection;
         private Post _post;
 
@@ -31,14 +32,29 @@ namespace Findier.Windows.ViewModels
             TextCommand = new DelegateCommand(TextExecute);
             EmailCommand = new DelegateCommand(EmailExecute);
             NewCommentCommand = new DelegateCommand(NewCommentExecute);
+            EditCommand = new DelegateCommand(EditExecute);
+            DeleteCommand = new DelegateCommand(DeleteExecute);
 
             if (IsInDesignMode)
             {
+                CanEdit = true;
                 OnNavigatedTo(null, NavigationMode.New, new Dictionary<string, object>());
             }
         }
 
         public DelegateCommand CallCommand { get; }
+
+        public bool CanEdit
+        {
+            get
+            {
+                return _canEdit;
+            }
+            set
+            {
+                Set(ref _canEdit, value);
+            }
+        }
 
         public CommentCollection CommentCollection
         {
@@ -51,6 +67,10 @@ namespace Findier.Windows.ViewModels
                 Set(ref _commentCollection, value);
             }
         }
+
+        public DelegateCommand DeleteCommand { get; }
+
+        public DelegateCommand EditCommand { get; }
 
         public DelegateCommand EmailCommand { get; }
 
@@ -85,6 +105,7 @@ namespace Findier.Windows.ViewModels
             }
 
             Post = postResponse.DeserializedResponse.Data;
+            CanEdit = Post.User == _findierService.CurrentUser;
             var commentsRequest = new GetPostCommentsRequest(parameter as string).Limit(20);
             CommentCollection = new CommentCollection(commentsRequest, _findierService);
         }
@@ -98,6 +119,34 @@ namespace Findier.Windows.ViewModels
                 {
                     { "PostId", Post.Id }
                 });
+        }
+
+        private async void DeleteExecute()
+        {
+            if (await MessageBox.ShowAsync("Are you sure you want to delete this post?",
+                "Delete post",
+                MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+            {
+                return;
+            }
+
+            using (UiBlocker.Show("Deleting..."))
+            {
+                var restResponse = await _findierService.SendAsync(new DeletePostRequest(Post.Id));
+                if (restResponse.IsSuccessStatusCode)
+                {
+                    CurtainPrompt.ShowError("Post deleted.");
+                    NavigationService.GoBack();
+                }
+                else
+                {
+                    CurtainPrompt.ShowError(restResponse.DeserializedResponse?.Error ?? "Problem deleting post.");
+                }
+            }
+        }
+
+        private void EditExecute()
+        {
         }
 
         private async void EmailExecute()

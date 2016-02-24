@@ -45,5 +45,12 @@ namespace Findier.Web.Services
                         Data = request.ToDummyData()
                     }));
         }
+
+        public Task<RestResponse<FindierResponse>> SendAsync<T>(T request) where T : FindierBaseRequest
+        {
+            return
+                Task.FromResult(new RestResponse<FindierResponse>(new HttpResponseMessage(HttpStatusCode.OK),
+                    new FindierResponse()));
+        }
     }
 }

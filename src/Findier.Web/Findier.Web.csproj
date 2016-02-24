@@ -67,6 +67,8 @@
     <Compile Include="Requests\CreateCommentRequest.cs" />
     <Compile Include="Requests\CreatePostRequest.cs" />
     <Compile Include="Requests\CreateUserRequest.cs" />
+    <Compile Include="Requests\DeleteCommentRequest.cs" />
+    <Compile Include="Requests\DeletePostRequest.cs" />
     <Compile Include="Requests\DownvoteCommentRequest.cs" />
     <Compile Include="Requests\DownvotePostRequest.cs" />
     <Compile Include="Requests\GetFinboardsRequest.cs" />

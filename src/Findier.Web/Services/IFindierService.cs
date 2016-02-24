@@ -21,5 +21,7 @@ namespace Findier.Web.Services
         Task<RestResponse<OAuthData>> RegisterAsync(CreateUserRequest request);
 
         Task<RestResponse<FindierResponse<TT>>> SendAsync<T, TT>(T request) where T : FindierBaseRequest<TT>;
+
+        Task<RestResponse<FindierResponse>> SendAsync<T>(T request) where T : FindierBaseRequest;
     }
 }

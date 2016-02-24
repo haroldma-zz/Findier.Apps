@@ -102,6 +102,26 @@ namespace Findier.Web.Services
             return request.ToResponseAsync();
         }
 
+        public Task<RestResponse<FindierResponse>> SendAsync<T>(T request) where T : FindierBaseRequest
+        {
+            if (typeof (T).GetTypeInfo().GetCustomAttribute<IncludeGeoLocationAttribute>() != null)
+            {
+                // TODO: use gps
+                request.Header(FindierConstants.GeoHeader, "18.376629, -66.176630");
+            }
+
+            if (IsAuthenticated)
+            {
+                request.Header("Authorization", "Bearer " + _accessToken);
+            }
+            else if (request.Headers.ContainsKey("Authorization"))
+            {
+                request.Headers.Remove("Authorization");
+            }
+
+            return request.ToResponseAsync();
+        }
+
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
