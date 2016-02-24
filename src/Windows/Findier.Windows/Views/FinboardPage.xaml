@@ -15,7 +15,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <controls:PageHeader Text="Posts">
+        <controls:PageHeader Content="{Binding Finboard.Title}">
             <controls:PageHeader.PrimaryCommands>
                 <AppBarButton Icon="Add" Label="New" Command="{Binding NewPostCommand}" />
             </controls:PageHeader.PrimaryCommands>

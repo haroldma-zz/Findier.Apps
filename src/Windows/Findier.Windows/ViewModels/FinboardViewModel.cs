@@ -28,6 +28,18 @@ namespace Findier.Windows.ViewModels
             }
         }
 
+        public Finboard Finboard
+        {
+            get
+            {
+                return _finboard;
+            }
+            set
+            {
+                Set(ref _finboard, value);
+            }
+        }
+
         public DelegateCommand NewPostCommand { get; }
 
         public DelegateCommand<ItemClickEventArgs> PostClickCommand { get; }
@@ -49,14 +61,14 @@ namespace Findier.Windows.ViewModels
             NavigationMode mode,
             IDictionary<string, object> state)
         {
-            _finboard = (Finboard)parameter;
-            var postsRequest = new GetFinboardFeedRequest(_finboard.Id).Limit(20);
+            Finboard = (Finboard)parameter;
+            var postsRequest = new GetFinboardFeedRequest(Finboard.Id).Limit(20);
             PostCollection = new PlainPostCollection(postsRequest, _findierService);
         }
 
         private void NewPostExecute()
         {
-            NavigationService.Navigate(typeof (NewPostPage), _finboard);
+            NavigationService.Navigate(typeof (NewPostPage), Finboard);
         }
 
         private void PostClickExecute(ItemClickEventArgs args)
