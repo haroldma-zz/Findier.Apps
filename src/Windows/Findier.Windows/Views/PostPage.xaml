@@ -13,15 +13,28 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <controls:PageHeader Text="Post" />
+        <controls:PageHeader Text="Post">
+            <controls:PageHeader.PrimaryCommands>
+                <AppBarButton Icon="Comment" Label="New comment" />
+            </controls:PageHeader.PrimaryCommands>
+        </controls:PageHeader>
         <ListView Grid.Row="1" Padding="0, 5, 0, 0" IsItemClickEnabled="True" SelectionMode="None" ItemsSource="{Binding CommentCollection}">
             <ListView.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <controls:MaterialCard HeaderText="{Binding Post.HeaderText}" 
                                                ActionButtonText="Contact" 
-                                               ActionButtonVisibility="Visible"
-                                               ActionButtonCommand="{Binding ContactCommand}">
+                                               ActionButtonVisibility="Visible">
+                            <controls:MaterialCard.ActionButtonFlyout>
+                                <MenuFlyout Placement="Bottom">
+                                    <MenuFlyoutItem Text="Call" Visibility="{Binding Post.PhoneNumber, Converter={StaticResource NullToVisibilityConverter}}"
+                                                    Command="{Binding CallCommand}"/>
+                                    <MenuFlyoutItem Text="Text" Visibility="{Binding Post.PhoneNumber, Converter={StaticResource NullToVisibilityConverter}}" 
+                                                    Command="{Binding TextCommand}"/>
+                                    <MenuFlyoutItem Text="Email" Visibility="{Binding Post.Email, Converter={StaticResource NullToVisibilityConverter}}" 
+                                                    Command="{Binding EmailCommand}"/>
+                                </MenuFlyout>
+                            </controls:MaterialCard.ActionButtonFlyout>
                             <StackPanel>
                                 <TextBlock Text="{Binding Post.Title}" TextWrapping="Wrap" FontSize="20" Margin="0,0,0,10" />
                                 <TextBlock Text="{Binding Post.Text}" TextWrapping="Wrap" Visibility="{Binding Post.Text, Converter={StaticResource NullToVisibilityConverter}}" />

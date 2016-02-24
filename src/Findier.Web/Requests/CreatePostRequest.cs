@@ -14,7 +14,6 @@ namespace Findier.Web.Requests
             PostType type,
             decimal price = 0,
             bool isNsfw = false,
-            bool canMessage = true,
             string email = null,
             string phoneNumber = null) : base("posts")
         {
@@ -25,7 +24,6 @@ namespace Findier.Web.Requests
                 .Parameter(nameof(type), type.ToString())
                 .Parameter(nameof(price), price.ToString())
                 .Parameter(nameof(isNsfw), isNsfw.ToString())
-                .Parameter(nameof(canMessage), canMessage.ToString())
                 .Parameter(nameof(email), email)
                 .Parameter(nameof(phoneNumber), phoneNumber);
         }

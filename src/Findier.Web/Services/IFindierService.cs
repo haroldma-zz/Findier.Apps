@@ -1,11 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using System.Threading.Tasks;
 using Findier.Web.Http;
 using Findier.Web.Requests;
 using Findier.Web.Responses;
 
 namespace Findier.Web.Services
 {
-    public interface IFindierService
+    public interface IFindierService : INotifyPropertyChanged
     {
         string CurrentUser { get; }
 

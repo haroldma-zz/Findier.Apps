@@ -8,13 +8,22 @@ namespace Findier.Windows.Services
     {
         public TelemetryClient Client { get; }
 
-        public InsightsService.InsightsStopwatchEvent TrackTimeEvent(string name,
-            IDictionary<string, string> properties = null)
+        public void TrackEvent(
+            string name,
+            IDictionary<string, string> properties = null,
+            IDictionary<string, double> metrics = null)
         {
             throw new NotImplementedException();
         }
 
-        public void TrackPageView(string name, string parameter)
+        public void TrackPageView(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public InsightsService.InsightsStopwatchEvent TrackTimeEvent(
+            string name,
+            IDictionary<string, string> properties = null)
         {
             throw new NotImplementedException();
         }

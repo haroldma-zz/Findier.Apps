@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using System.ComponentModel;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Findier.Core.Utilities.Interfaces;
 using Findier.Web.Attributes;
@@ -13,11 +15,13 @@ namespace Findier.Web.Services
     {
         private readonly ICredentialUtility _credentialUtility;
         private string _accessToken;
+        private string _currentUser;
 
         public FindierService(ICredentialUtility credentialUtility)
         {
             _credentialUtility = credentialUtility;
             var creds = _credentialUtility.GetCredentials("vycel");
+
             if (creds == null)
             {
                 return;
@@ -27,7 +31,20 @@ namespace Findier.Web.Services
             _accessToken = creds.Password;
         }
 
-        public string CurrentUser { get; private set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public string CurrentUser
+        {
+            get
+            {
+                return _currentUser;
+            }
+            private set
+            {
+                _currentUser = value;
+                OnPropertyChanged();
+            }
+        }
 
         public bool IsAuthenticated => _accessToken != null;
 
@@ -83,6 +100,11 @@ namespace Findier.Web.Services
             }
 
             return request.ToResponseAsync();
+        }
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

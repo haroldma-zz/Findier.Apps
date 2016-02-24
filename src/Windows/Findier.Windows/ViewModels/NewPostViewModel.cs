@@ -7,6 +7,7 @@ using Findier.Web.Requests;
 using Findier.Web.Services;
 using Findier.Windows.Common;
 using Findier.Windows.Engine.Mvvm;
+using Findier.Windows.Services;
 using Findier.Windows.Views;
 
 namespace Findier.Windows.ViewModels
@@ -18,12 +19,12 @@ namespace Findier.Windows.ViewModels
                 "^((([a-z]|\\d|[!#\\$%&'\\*\\+\\-\\/=\\?\\^_`{\\|}~]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])+(\\.([a-z]|\\d|[!#\\$%&'\\*\\+\\-\\/=\\?\\^_`{\\|}~]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])+)*)|((\\x22)((((\\x20|\\x09)*(\\x0d\\x0a))?(\\x20|\\x09)+)?(([\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x7f]|\\x21|[\\x23-\\x5b]|[\\x5d-\\x7e]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(\\\\([\\x01-\\x09\\x0b\\x0c\\x0d-\\x7f]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF]))))*(((\\x20|\\x09)*(\\x0d\\x0a))?(\\x20|\\x09)+)?(\\x22)))@((([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])([a-z]|\\d|-|\\.|_|~|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])*([a-z]|\\d|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])))\\.)+(([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])|(([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])([a-z]|\\d|-|\\.|_|~|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])*([a-z]|[\\u00A0-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFEF])))\\.?$");
 
         private readonly IFindierService _findierService;
+        private readonly IInsightsService _insightsService;
 
         private readonly Regex _phoneRegex =
             new Regex(
                 "^(\\+\\s?)?((?<!\\+.*)\\(\\+?\\d+([\\s\\-\\.]?\\d+)?\\)|\\d+)([\\s\\-\\.]?(\\(\\d+([\\s\\-\\.]?\\d+)?\\)|\\d+))*(\\s?(x|ext\\.?)\\s?\\d+)?$");
 
-        private bool _canMessage = true;
         private string _email;
 
         private PlainFinboard _finboard;
@@ -37,23 +38,12 @@ namespace Findier.Windows.ViewModels
         private string _text;
         private string _title;
 
-        public NewPostViewModel(IFindierService findierService)
+        public NewPostViewModel(IFindierService findierService, IInsightsService insightsService)
         {
             _findierService = findierService;
+            _insightsService = insightsService;
 
             PublishCommand = new DelegateCommand(PublishExecute);
-        }
-
-        public bool CanMessage
-        {
-            get
-            {
-                return _canMessage;
-            }
-            set
-            {
-                Set(ref _canMessage, value);
-            }
         }
 
         public string Email
@@ -231,7 +221,7 @@ namespace Findier.Windows.ViewModels
                 return;
             }
 
-            if (!CanMessage && string.IsNullOrWhiteSpace(Email)
+            if (string.IsNullOrWhiteSpace(Email)
                 && string.IsNullOrWhiteSpace(PhoneNumber))
             {
                 CurtainPrompt.ShowError("Please enter at least one contact method.");
@@ -244,7 +234,6 @@ namespace Findier.Windows.ViewModels
                 type,
                 price,
                 IsNsfw,
-                CanMessage,
                 Email,
                 PhoneNumber);
 
@@ -262,6 +251,15 @@ namespace Findier.Windows.ViewModels
                 CurtainPrompt.ShowError(restResponse.DeserializedResponse?.Error
                     ?? "Problem publishing post. Try again later.");
             }
+
+            var props = new Dictionary<string, string>();
+
+            if (restResponse.IsSuccessStatusCode)
+            {
+                props.Add("Error", restResponse.DeserializedResponse?.Error ?? "Unknown");
+                props.Add("StatusCode", restResponse.StatusCode.ToString());
+            }
+            _insightsService.TrackEvent("PublishPost", props);
         }
     }
 }

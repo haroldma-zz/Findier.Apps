@@ -3,10 +3,19 @@ using Microsoft.ApplicationInsights;
 
 namespace Findier.Windows.Services
 {
-    internal interface IInsightsService
+    public interface IInsightsService
     {
         TelemetryClient Client { get; }
-        InsightsService.InsightsStopwatchEvent TrackTimeEvent(string name, IDictionary<string, string> properties = null);
-        void TrackPageView(string name, string parameter);
+
+        void TrackEvent(
+            string name,
+            IDictionary<string, string> properties = null,
+            IDictionary<string, double> metrics = null);
+
+        void TrackPageView(string name);
+
+        InsightsService.InsightsStopwatchEvent TrackTimeEvent(
+            string name,
+            IDictionary<string, string> properties = null);
     }
 }

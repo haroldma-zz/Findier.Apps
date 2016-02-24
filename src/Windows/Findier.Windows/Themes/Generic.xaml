@@ -35,7 +35,8 @@
                                             Padding="0"
                                             IsEnabled="{TemplateBinding IsActionButtonEnabled}"
                                             Visibility="{TemplateBinding ActionButtonVisibility}"
-                                            HorizontalContentAlignment="Left">
+                                            HorizontalContentAlignment="Left"
+                                            Flyout="{TemplateBinding ActionButtonFlyout}">
                                         <Button.Resources>
                                             <Style x:Key="ButtonStyle1" TargetType="Button">
                                                 <Setter Property="HorizontalAlignment" Value="Stretch" />

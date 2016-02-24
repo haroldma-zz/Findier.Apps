@@ -1,6 +1,7 @@
 ﻿using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
 
 namespace Findier.Windows.Controls
 {
@@ -9,6 +10,12 @@ namespace Findier.Windows.Controls
         public static readonly DependencyProperty ActionButtonCommandProperty =
             DependencyProperty.RegisterAttached(nameof(ActionButtonCommand),
                 typeof (ICommand),
+                typeof (MaterialCard),
+                null);
+
+        public static readonly DependencyProperty ActionButtonFlyoutProperty =
+            DependencyProperty.RegisterAttached(nameof(ActionButtonFlyout),
+                typeof (FlyoutBase),
                 typeof (MaterialCard),
                 null);
 
@@ -58,6 +65,18 @@ namespace Findier.Windows.Controls
             set
             {
                 SetValue(ActionButtonCommandProperty, value);
+            }
+        }
+
+        public FlyoutBase ActionButtonFlyout
+        {
+            get
+            {
+                return (FlyoutBase)GetValue(ActionButtonFlyoutProperty);
+            }
+            set
+            {
+                SetValue(ActionButtonFlyoutProperty, value);
             }
         }
 

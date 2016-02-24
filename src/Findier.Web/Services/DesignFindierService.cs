@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.ComponentModel;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Findier.Web.Http;
@@ -9,6 +10,8 @@ namespace Findier.Web.Services
 {
     public class DesignFindierService : IFindierService
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public string CurrentUser => "JohnDoe";
 
         public bool IsAuthenticated => true;

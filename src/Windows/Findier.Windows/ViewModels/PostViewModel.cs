@@ -1,4 +1,8 @@
+using System;
 using System.Collections.Generic;
+using Windows.ApplicationModel.Calls;
+using Windows.ApplicationModel.Chat;
+using Windows.ApplicationModel.Email;
 using Windows.UI.Xaml.Navigation;
 using Findier.Web.Models;
 using Findier.Web.Requests;
@@ -6,27 +10,33 @@ using Findier.Web.Services;
 using Findier.Windows.Common;
 using Findier.Windows.Engine.Mvvm;
 using Findier.Windows.IncrementalLoading;
-using Findier.Windows.Views;
+using Findier.Windows.Services;
 
 namespace Findier.Windows.ViewModels
 {
     public class PostViewModel : ViewModelBase
     {
         private readonly IFindierService _findierService;
+        private readonly IInsightsService _insightsService;
         private CommentCollection _commentCollection;
         private Post _post;
 
-        public PostViewModel(IFindierService findierService)
+        public PostViewModel(IFindierService findierService, IInsightsService insightsService)
         {
             _findierService = findierService;
+            _insightsService = insightsService;
 
-            ContactCommand = new DelegateCommand(MessageExecute);
+            CallCommand = new DelegateCommand(CallExecute);
+            TextCommand = new DelegateCommand(TextExecute);
+            EmailCommand = new DelegateCommand(EmailExecute);
 
             if (IsInDesignMode)
             {
                 OnNavigatedTo(null, NavigationMode.New, new Dictionary<string, object>());
             }
         }
+
+        public DelegateCommand CallCommand { get; }
 
         public CommentCollection CommentCollection
         {
@@ -40,7 +50,7 @@ namespace Findier.Windows.ViewModels
             }
         }
 
-        public DelegateCommand ContactCommand { get; }
+        public DelegateCommand EmailCommand { get; }
 
         public Post Post
         {
@@ -53,6 +63,8 @@ namespace Findier.Windows.ViewModels
                 Set(ref _post, value);
             }
         }
+
+        public DelegateCommand TextCommand { get; }
 
         public override sealed async void OnNavigatedTo(
             object parameter,
@@ -73,16 +85,48 @@ namespace Findier.Windows.ViewModels
             CommentCollection = new CommentCollection(commentsRequest, _findierService);
         }
 
-        private void MessageExecute()
+        private void CallExecute()
         {
-            if (_findierService.IsAuthenticated)
+            PhoneCallManager.ShowPhoneCallUI(Post.PhoneNumber, "@" + Post.User);
+
+            _insightsService.TrackEvent("ContactCall",
+                new Dictionary<string, string>
+                {
+                    { "PostId", Post.Id }
+                });
+        }
+
+        private async void EmailExecute()
+        {
+            var mail = new EmailMessage
             {
-                // go to message page
-            }
-            else
+                Subject = "Findier post",
+                Body = $"Contacting you in regards to your post on Findier: \"{Post.Title}\"\n\n"
+            };
+            mail.To.Add(new EmailRecipient(Post.Email, "@" + Post.User));
+            await EmailManager.ShowComposeNewEmailAsync(mail);
+
+            _insightsService.TrackEvent("ContactEmail",
+                new Dictionary<string, string>
+                {
+                    { "PostId", Post.Id }
+                });
+        }
+
+        private async void TextExecute()
+        {
+            var msg = new ChatMessage
             {
-                NavigationService.Navigate(typeof (AuthenticationPage), true);
-            }
+                Body = $"Contacting you in regards to your post on Findier: \"{Post.Title}\""
+            };
+            msg.Recipients.Add(Post.PhoneNumber);
+            await ChatMessageManager.ShowComposeSmsMessageAsync(msg);
+
+            _insightsService.TrackEvent("ContactSms",
+                new Dictionary<string, string>
+                {
+                    { "PostId", Post.Id }
+                });
         }
     }
 }
