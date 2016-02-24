@@ -13,10 +13,10 @@ namespace Findier.Windows.IncrementalLoading
     public class PlainPostCollection : IncrementalLoadingBase<PlainPost>
     {
         private readonly IFindierService _findierService;
-        private readonly GetFinboardFeedRequest _request;
+        private readonly GetCategoryPostsRequest _request;
         private FindierResponse<FindierPageData<PlainPost>> _currentResponse;
 
-        public PlainPostCollection(GetFinboardFeedRequest request, IFindierService findierService)
+        public PlainPostCollection(GetCategoryPostsRequest request, IFindierService findierService)
         {
             _request = request;
             _findierService = findierService;
@@ -46,7 +46,7 @@ namespace Findier.Windows.IncrementalLoading
         protected override async Task<IList<PlainPost>> LoadMoreItemsOverrideAsync(CancellationToken c, uint count)
         {
             var response = await _findierService
-                .SendAsync<GetFinboardFeedRequest, FindierPageData<PlainPost>>(_request.Offset(Count).Limit((int)count));
+                .SendAsync<GetCategoryPostsRequest, FindierPageData<PlainPost>>(_request.Offset(Count).Limit((int)count));
             if (!response.IsSuccessStatusCode)
             {
                 return null;
@@ -78,7 +78,7 @@ namespace Findier.Windows.IncrementalLoading
 
             public List<PlainPost> Items { get; set; }
 
-            public GetFinboardFeedRequest Request { get; set; }
+            public GetCategoryPostsRequest Request { get; set; }
 
             public PlainPostCollection ToCollection(IFindierService apiService)
             {

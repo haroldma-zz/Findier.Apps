@@ -1,6 +1,6 @@
 ﻿namespace Findier.Web.Models
 {
-    public class Finboard : PlainFinboard
+    public class Category : PlainCategory
     {
         public string Description { get; set; }
 

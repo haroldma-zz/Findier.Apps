@@ -15,29 +15,39 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <controls:PageHeader Text="Home">
+        <controls:PageHeader x:Uid="MainPageHeader" Text="Home">
             <controls:PageHeader.SecondaryCommands>
-                <AppBarButton Label="Contact us" Command="{Binding ContactCommand}" />
-                <AppBarButton Label="Review" Command="{Binding ReviewCommand}" />
-                <AppBarButton Label="Login/Register" Command="{Binding LoginCommand}" Visibility="{Binding FindierService.IsAuthenticated, Converter={StaticResource ReverseVisibilityConverter}}" />
-                <AppBarButton Label="Logout" Foreground="Red" Command="{Binding LogoutCommand}" Visibility="{Binding FindierService.IsAuthenticated, Converter={StaticResource VisibilityConverter}}" />
+                <AppBarButton x:Uid="ContactUsAppBar" Label="Contact us" Command="{Binding ContactCommand}" />
+                <AppBarButton x:Uid="ReviewAppBar" Label="Review" Command="{Binding ReviewCommand}" />
+                <AppBarButton x:Uid="LoginRegisterAppBar" Label="Login/Register" Command="{Binding LoginCommand}" Visibility="{Binding FindierService.IsAuthenticated, Converter={StaticResource ReverseVisibilityConverter}}" />
+                <AppBarButton x:Uid="LogoutAppBar" Label="Logout" Foreground="Red" Command="{Binding LogoutCommand}" Visibility="{Binding FindierService.IsAuthenticated, Converter={StaticResource VisibilityConverter}}" />
             </controls:PageHeader.SecondaryCommands>
         </controls:PageHeader>
-        <ListView Grid.Row="1" Padding="0,5,0,0" ItemsSource="{Binding FinboardCollection}" IsItemClickEnabled="True" SelectionMode="None">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <controls:MaterialCard HeaderText="{Binding Title}">
-                        <StackPanel>
-                            <TextBlock Text="{Binding Description}" TextWrapping="Wrap" />
-                        </StackPanel>
-                    </controls:MaterialCard>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-            <interactivity:Interaction.Behaviors>
-                <core:EventTriggerBehavior EventName="ItemClick">
-                    <core:InvokeCommandAction Command="{Binding FinboardClickCommand}" />
-                </core:EventTriggerBehavior>
-            </interactivity:Interaction.Behaviors>
-        </ListView>
+        <Pivot Grid.Row="1">
+            <PivotItem x:Uid="CategoriesPivot" Header="Categories">
+                <ListView Padding="0,5,0,0" ItemsSource="{Binding CategoriesCollection}" IsItemClickEnabled="True" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <controls:MaterialCard HeaderText="{Binding Title}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Description}" Visibility="{Binding Description, Converter={StaticResource NullToVisibilityConverter}}" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </controls:MaterialCard>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="ItemClick">
+                            <core:InvokeCommandAction Command="{Binding CategoryClickCommand}" />
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </ListView>
+            </PivotItem>
+            <PivotItem x:Uid="NewPivot" Header="New">
+                
+            </PivotItem>
+            <PivotItem x:Uid="TopPivot" Header="Top">
+
+            </PivotItem>
+        </Pivot>
     </Grid>
 </Page>

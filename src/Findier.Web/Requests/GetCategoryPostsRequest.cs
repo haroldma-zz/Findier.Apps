@@ -6,19 +6,19 @@ using Findier.Web.Responses;
 
 namespace Findier.Web.Requests
 {
-    public class GetFinboardFeedRequest : FindierBaseRequest<FindierPageData<PlainPost>>
+    public class GetCategoryPostsRequest : FindierBaseRequest<FindierPageData<PlainPost>>
     {
-        public GetFinboardFeedRequest(string id) : base("finboards/{id}/posts")
+        public GetCategoryPostsRequest(string id) : base("categories/{id}/posts")
         {
             this.Segment("id", id);
         }
 
-        public GetFinboardFeedRequest Limit(int limit)
+        public GetCategoryPostsRequest Limit(int limit)
         {
             return this.Query("limit", limit);
         }
 
-        public GetFinboardFeedRequest Offset(int offset)
+        public GetCategoryPostsRequest Offset(int offset)
         {
             return this.Query("offset", offset);
         }

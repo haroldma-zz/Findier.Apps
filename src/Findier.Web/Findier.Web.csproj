@@ -61,8 +61,8 @@
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\PlainPost.cs" />
     <Compile Include="Models\Post.cs" />
-    <Compile Include="Models\Finboard.cs" />
-    <Compile Include="Models\PlainFinboard.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\PlainCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\CreateCommentRequest.cs" />
     <Compile Include="Requests\CreatePostRequest.cs" />
@@ -72,9 +72,9 @@
     <Compile Include="Requests\DownvoteCommentRequest.cs" />
     <Compile Include="Requests\DownvotePostRequest.cs" />
     <Compile Include="Requests\EditPostRequest.cs" />
-    <Compile Include="Requests\GetFinboardsRequest.cs" />
+    <Compile Include="Requests\GetCategoriesRequest.cs" />
     <Compile Include="Requests\FindierBaseRequest.cs" />
-    <Compile Include="Requests\GetFinboardFeedRequest.cs" />
+    <Compile Include="Requests\GetCategoryPostsRequest.cs" />
     <Compile Include="Requests\GetPostCommentsRequest.cs" />
     <Compile Include="Requests\GetPostRequest.cs" />
     <Compile Include="Requests\OAuthRequest.cs" />

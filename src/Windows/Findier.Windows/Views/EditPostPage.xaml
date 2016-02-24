@@ -10,36 +10,36 @@
 
     <ScrollViewer Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
         <StackPanel>
-            <controls:MaterialCard Margin="0,10,0,0" HeaderText="Post details"
+            <controls:MaterialCard x:Uid="PostDetailsCard" Margin="0,10,0,0" HeaderText="Post details"
                                    IsEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}">
                 <StackPanel>
-                    <TextBox PlaceholderText="Title"
+                    <TextBox x:Uid="TitleBox" PlaceholderText="Title"
                              IsEnabled="False"
                              Text="{Binding Title, Mode=TwoWay}"
                              Style="{StaticResource MaterialTextBoxStyle}" />
-                    <TextBox PlaceholderText="Text"
+                    <TextBox x:Uid="TextBox" PlaceholderText="Text"
                              Text="{Binding Text, Mode=TwoWay}"
                              AcceptsReturn="True"
                              TextWrapping="Wrap"
                              Style="{StaticResource MaterialTextBoxStyle}" MinHeight="100" />
-                    <CheckBox Content="Is NSFW (inappropriate content)"
+                    <CheckBox x:Uid="NsfwCheckBox" Content="Is NSFW (inappropriate content)"
                               IsEnabled="{Binding CanEditNsfw}"
                               IsChecked="{Binding IsNsfw, Mode=TwoWay}"
                               Margin="0,10,0,0" />
                 </StackPanel>
             </controls:MaterialCard>
-            <controls:MaterialCard Margin="0,10,0,0" HeaderText="Contact details"
+            <controls:MaterialCard x:Uid="ContactDetailsCard" Margin="0,10,0,0" HeaderText="Contact details"
                                    IsEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}">
                 <StackPanel>
-                    <TextBox PlaceholderText="Email" Style="{StaticResource MaterialTextBoxStyle}"
+                    <TextBox x:Uid="EmailBox" PlaceholderText="Email" Style="{StaticResource MaterialTextBoxStyle}"
                              Text="{Binding Email, Mode=TwoWay}" />
-                    <TextBox PlaceholderText="Phone number" Style="{StaticResource MaterialTextBoxStyle}"
+                    <TextBox x:Uid="PhoneNumberBox" PlaceholderText="Phone number" Style="{StaticResource MaterialTextBoxStyle}"
                              Text="{Binding PhoneNumber, Mode=TwoWay}" />
-                    <TextBlock Text="Have at least one contact method." TextWrapping="Wrap"
+                    <TextBlock x:Uid="ContactRequirementBlock" Text="Have at least one contact method." TextWrapping="Wrap"
                                Foreground="{ThemeResource TextBoxPlaceholderTextThemeBrush}" Margin="0,10,0,0" />
                 </StackPanel>
             </controls:MaterialCard>
-            <controls:MaterialCard Margin="0,5,0,0" HeaderText="Post type"
+            <controls:MaterialCard x:Uid="PostTypeEditCard" Margin="0,5,0,0" HeaderText="Post type"
                                    IsEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}"
                                    ActionButtonVisibility="Visible"
                                    ActionButtonText="Edit"
@@ -52,26 +52,26 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <RadioButton Content="$$$" MinWidth="0" HorizontalAlignment="Left"
+                        <RadioButton x:Uid="MoneyTypeButton" Content="$$$" MinWidth="0" HorizontalAlignment="Left"
                                      IsChecked="{Binding IsMoney, Mode=TwoWay}" />
-                        <RadioButton Grid.Column="1" Content="Fixed" MinWidth="0" HorizontalAlignment="Center"
+                        <RadioButton x:Uid="FixedTypeButton" Grid.Column="1" Content="Fixed" MinWidth="0" HorizontalAlignment="Center"
                                      IsChecked="{Binding IsFixed, Mode=TwoWay}" />
-                        <RadioButton Grid.Column="2" Content="Freebie" MinWidth="0" HorizontalAlignment="Right"
+                        <RadioButton x:Uid="FreebieTypeButton" Grid.Column="2" Content="Freebie" MinWidth="0" HorizontalAlignment="Right"
                                      IsChecked="{Binding IsFreebie, Mode=TwoWay}" />
                     </Grid>
-                    <TextBlock Text="The service price is discuss later with client." TextWrapping="Wrap"
+                    <TextBlock x:Uid="MoneyTypeBlock" Text="The service price is discuss later with client." TextWrapping="Wrap"
                                Margin="0,10,0,0"
                                Foreground="{ThemeResource TextBoxPlaceholderTextThemeBrush}"
                                Visibility="{Binding IsMoney, Converter={StaticResource VisibilityConverter}}" />
                     <StackPanel Visibility="{Binding IsFixed, Converter={StaticResource VisibilityConverter}}">
-                        <TextBlock Text="The service has a fixed price." TextWrapping="Wrap" Margin="0,10,0,0"
+                        <TextBlock x:Uid="FixedTypeBlock" Text="The service has a fixed price." TextWrapping="Wrap" Margin="0,10,0,0"
                                    Foreground="{ThemeResource TextBoxPlaceholderTextThemeBrush}" />
                         <TextBox PlaceholderText="100"
                                  Text="{Binding Price, Mode=TwoWay}"
                                  IsTabStop="True"
                                  InputScope="Number" />
                     </StackPanel>
-                    <TextBlock Text="This service is completely free." TextWrapping="Wrap" Margin="0,10,0,0"
+                    <TextBlock x:Uid="FreebieTypeBlock" Text="This service is completely free." TextWrapping="Wrap" Margin="0,10,0,0"
                                Foreground="{ThemeResource TextBoxPlaceholderTextThemeBrush}"
                                Visibility="{Binding IsFreebie, Converter={StaticResource VisibilityConverter}}" />
                 </StackPanel>

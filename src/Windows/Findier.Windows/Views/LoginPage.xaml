@@ -9,17 +9,17 @@
     DataContext="{Binding Login, Source={StaticResource ViewModelLocator}}">
 
     <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-        <controls:MaterialCard Margin="0,10,0,0" HeaderText="Existing user"
+        <controls:MaterialCard x:Uid="ExistingUserCard" Margin="0,10,0,0" HeaderText="Existing user"
                                IsLoading="{Binding IsLoading}"
                                ActionButtonVisibility="Visible"
                                ActionButtonText="Login"
                                IsActionButtonEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}"
                                ActionButtonCommand="{Binding LoginCommand}">
             <StackPanel>
-                <TextBox PlaceholderText="Username" Text="{Binding Username, Mode=TwoWay}"
+                <TextBox x:Uid="UsernameBox" PlaceholderText="Username" Text="{Binding Username, Mode=TwoWay}"
                          IsEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}"
                          Style="{StaticResource MaterialTextBoxStyle}" />
-                <PasswordBox PlaceholderText="Password" Password="{Binding Password, Mode=TwoWay}"
+                <PasswordBox x:Uid="PasswordBox" PlaceholderText="Password" Password="{Binding Password, Mode=TwoWay}"
                              IsEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}"
                              Style="{StaticResource MaterialPasswordBoxStyle}" />
             </StackPanel>

@@ -4,7 +4,7 @@
     {
         public string Email { get; set; }
 
-        public PlainFinboard Finboard { get; set; }
+        public PlainCategory Category { get; set; }
 
         public string PhoneNumber { get; set; }
     }

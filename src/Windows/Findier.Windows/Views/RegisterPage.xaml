@@ -9,26 +9,26 @@
     DataContext="{Binding Register, Source={StaticResource ViewModelLocator}}">
 
     <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-        <controls:MaterialCard Margin="0,10,0,0" HeaderText="New user"
+        <controls:MaterialCard x:Uid="NewUserCard" Margin="0,10,0,0" HeaderText="New user"
                                IsLoading="{Binding IsLoading}"
                                ActionButtonVisibility="Visible"
                                ActionButtonText="Create account"
                                IsActionButtonEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}"
                                ActionButtonCommand="{Binding RegisterCommand}">
             <StackPanel>
-                <TextBox PlaceholderText="Username"
+                <TextBox x:Uid="UsernameBox" PlaceholderText="Username"
                          Text="{Binding Username, Mode=TwoWay}"
                          IsEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}"
                          Style="{StaticResource MaterialTextBoxStyle}" />
-                <TextBox PlaceholderText="Display name"
+                <TextBox x:Uid="DisplayNameBox" PlaceholderText="Display name"
                          Text="{Binding DisplayName, Mode=TwoWay}"
                          IsEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}"
                          Style="{StaticResource MaterialTextBoxStyle}" />
-                <TextBox PlaceholderText="Email"
+                <TextBox x:Uid="EmailBox" PlaceholderText="Email"
                          Text="{Binding Email, Mode=TwoWay}"
                          IsEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}"
                          Style="{StaticResource MaterialTextBoxStyle}" />
-                <PasswordBox PlaceholderText="Password"
+                <PasswordBox x:Uid="PasswordBox" PlaceholderText="Password"
                              Password="{Binding Password, Mode=TwoWay}"
                              IsEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}"
                              Style="{StaticResource MaterialPasswordBoxStyle}" />

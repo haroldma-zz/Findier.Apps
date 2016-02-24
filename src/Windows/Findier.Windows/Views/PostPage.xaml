@@ -13,14 +13,14 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <controls:PageHeader Text="Post">
+        <controls:PageHeader x:Uid="PostPageHeader" Text="Post">
             <controls:PageHeader.PrimaryCommands>
-                <AppBarButton Icon="Edit" Label="Edit"  Visibility="{Binding CanEdit, Converter={StaticResource VisibilityConverter}}"
+                <AppBarButton x:Uid="EditAppBarButton" Icon="Edit" Label="Edit"  Visibility="{Binding CanEdit, Converter={StaticResource VisibilityConverter}}"
                               Command="{Binding EditCommand}" />
-                <AppBarButton Icon="Comment" Label="New comment" Command="{Binding NewCommentCommand}" />
+                <AppBarButton x:Uid="NewCommentAppBarButton" Icon="Comment" Label="New comment" Command="{Binding NewCommentCommand}" />
             </controls:PageHeader.PrimaryCommands>
             <controls:PageHeader.SecondaryCommands>
-                <AppBarButton Label="Delete" Visibility="{Binding CanEdit, Converter={StaticResource VisibilityConverter}}"
+                <AppBarButton x:Uid="DeleteAppBarButton" Label="Delete" Visibility="{Binding CanEdit, Converter={StaticResource VisibilityConverter}}"
                               Foreground="Red"
                               Command="{Binding DeleteCommand}" />
             </controls:PageHeader.SecondaryCommands>
@@ -29,16 +29,16 @@
             <ListView.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <controls:MaterialCard HeaderText="{Binding Post.HeaderText}" 
+                        <controls:MaterialCard x:Uid="PostCard" HeaderText="{Binding Post.HeaderText}" 
                                                ActionButtonText="Contact" 
                                                ActionButtonVisibility="Visible">
                             <controls:MaterialCard.ActionButtonFlyout>
                                 <MenuFlyout Placement="Bottom">
-                                    <MenuFlyoutItem Text="Call" Visibility="{Binding Post.PhoneNumber, Converter={StaticResource NullToVisibilityConverter}}"
+                                    <MenuFlyoutItem x:Uid="CallMenuItem" Text="Call" Visibility="{Binding Post.PhoneNumber, Converter={StaticResource NullToVisibilityConverter}}"
                                                     Command="{Binding CallCommand}"/>
-                                    <MenuFlyoutItem Text="Text" Visibility="{Binding Post.PhoneNumber, Converter={StaticResource NullToVisibilityConverter}}" 
+                                    <MenuFlyoutItem x:Uid="TextMenuItem" Text="Text" Visibility="{Binding Post.PhoneNumber, Converter={StaticResource NullToVisibilityConverter}}" 
                                                     Command="{Binding TextCommand}"/>
-                                    <MenuFlyoutItem Text="Email" Visibility="{Binding Post.Email, Converter={StaticResource NullToVisibilityConverter}}" 
+                                    <MenuFlyoutItem x:Uid="EmailMenuItem" Text="Email" Visibility="{Binding Post.Email, Converter={StaticResource NullToVisibilityConverter}}" 
                                                     Command="{Binding EmailCommand}"/>
                                 </MenuFlyout>
                             </controls:MaterialCard.ActionButtonFlyout>
@@ -47,7 +47,7 @@
                                 <TextBlock Text="{Binding Post.Text}" TextWrapping="Wrap" Visibility="{Binding Post.Text, Converter={StaticResource NullToVisibilityConverter}}" />
                             </StackPanel>
                         </controls:MaterialCard>
-                        <TextBlock Text="Comments" Margin="10" FontSize="20" />
+                        <TextBlock x:Uid="CommentsBlock" Text="Comments" Margin="10" FontSize="20" />
                     </StackPanel>
                 </DataTemplate>
             </ListView.HeaderTemplate>

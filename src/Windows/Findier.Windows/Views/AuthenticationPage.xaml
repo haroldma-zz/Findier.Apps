@@ -14,15 +14,15 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <controls:MaterialCard HeaderText="Existing user" Margin="0,10,0,0"
+            <controls:MaterialCard x:Uid="ExistingUserCard" HeaderText="Existing user" Margin="0,10,0,0"
                                    ActionButtonText="Login"
                                    ActionButtonVisibility="Visible"
                                    ActionButtonCommand="{Binding LoginCommand}" />
-            <controls:MaterialCard Grid.Row="1" HeaderText="New user" Margin="0,10,0,0"
+            <controls:MaterialCard x:Uid="NewUserCard" Grid.Row="1" HeaderText="New user" Margin="0,10,0,0"
                                    ActionButtonText="Create account"
                                    ActionButtonVisibility="Visible"
                                    ActionButtonCommand="{Binding RegisterCommand}" />
-            <controls:MaterialCard Grid.Row="2" HeaderText="Anonymous" Margin="0,10,0,0"
+            <controls:MaterialCard x:Uid="AnonymousUser" Grid.Row="2" HeaderText="Anonymous" Margin="0,10,0,0"
                                    Visibility="{Binding RequireAuthentication, Converter={StaticResource ReverseVisibilityConverter}}"
                                    ActionButtonVisibility="Visible"
                                    ActionButtonText="Browse"

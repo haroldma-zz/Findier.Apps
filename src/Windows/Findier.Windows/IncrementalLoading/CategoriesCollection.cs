@@ -10,19 +10,19 @@ using Findier.Windows.Common;
 
 namespace Findier.Windows.IncrementalLoading
 {
-    public class FinboardCollection : IncrementalLoadingBase<Finboard>
+    public class CategoriesCollection : IncrementalLoadingBase<Category>
     {
         private readonly IFindierService _findierService;
-        private readonly GetFinboardsRequest _request;
-        private FindierResponse<FindierPageData<Finboard>> _currentResponse;
+        private readonly GetCategoriesRequest _request;
+        private FindierResponse<FindierPageData<Category>> _currentResponse;
 
-        public FinboardCollection(GetFinboardsRequest request, IFindierService findierService)
+        public CategoriesCollection(GetCategoriesRequest request, IFindierService findierService)
         {
             _request = request;
             _findierService = findierService;
         }
 
-        internal FinboardCollection(Surrogate surrogate, IFindierService findierService)
+        internal CategoriesCollection(Surrogate surrogate, IFindierService findierService)
         {
             foreach (var items in surrogate.Items)
             {
@@ -43,10 +43,10 @@ namespace Findier.Windows.IncrementalLoading
             return _currentResponse?.Data?.HasNext ?? true;
         }
 
-        protected override async Task<IList<Finboard>> LoadMoreItemsOverrideAsync(CancellationToken c, uint count)
+        protected override async Task<IList<Category>> LoadMoreItemsOverrideAsync(CancellationToken c, uint count)
         {
             var response = await _findierService
-                .SendAsync<GetFinboardsRequest, FindierPageData<Finboard>>(_request.Offset(Count).Limit((int)count));
+                .SendAsync<GetCategoriesRequest, FindierPageData<Category>>(_request.Offset(Count).Limit((int)count));
             if (!response.IsSuccessStatusCode)
             {
                 return null;
@@ -67,22 +67,22 @@ namespace Findier.Windows.IncrementalLoading
             {
             }
 
-            internal Surrogate(FinboardCollection collection)
+            internal Surrogate(CategoriesCollection collection)
             {
                 Items = collection.ToList();
                 CurrentResponse = collection._currentResponse;
                 Request = collection._request;
             }
 
-            public FindierResponse<FindierPageData<Finboard>> CurrentResponse { get; set; }
+            public FindierResponse<FindierPageData<Category>> CurrentResponse { get; set; }
 
-            public List<Finboard> Items { get; set; }
+            public List<Category> Items { get; set; }
 
-            public GetFinboardsRequest Request { get; set; }
+            public GetCategoriesRequest Request { get; set; }
 
-            public FinboardCollection ToCollection(IFindierService apiService)
+            public CategoriesCollection ToCollection(IFindierService apiService)
             {
-                return new FinboardCollection(this, apiService);
+                return new CategoriesCollection(this, apiService);
             }
         }
     }

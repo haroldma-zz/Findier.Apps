@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddAppBarButton.Label" xml:space="preserve">
+    <value>Crear</value>
+  </data>
+  <data name="AnonymousUser.ActionButtonText" xml:space="preserve">
+    <value>Navegar</value>
+  </data>
+  <data name="AnonymousUser.HeaderText" xml:space="preserve">
+    <value>Anonimo</value>
+  </data>
+  <data name="CallMenuItem.Text" xml:space="preserve">
+    <value>Llamar</value>
+  </data>
+  <data name="CategoriesPivot.Header" xml:space="preserve">
+    <value>Categorias</value>
+  </data>
+  <data name="CommentsBlock.Text" xml:space="preserve">
+    <value>Commentarios</value>
+  </data>
+  <data name="ContactDetailsCard.HeaderText" xml:space="preserve">
+    <value>Informacion de contacto</value>
+  </data>
+  <data name="ContactRequirementBlock.Text" xml:space="preserve">
+    <value>Debes de incluir por lo menos una forma de contactarte.</value>
+  </data>
+  <data name="ContactUsAppBar.Label" xml:space="preserve">
+    <value>Contactanos</value>
+  </data>
+  <data name="DeleteAppBarButton.Label" xml:space="preserve">
+    <value>Borrar</value>
+  </data>
+  <data name="DisplayNameBox.PlaceholderText" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="EditAppBarButton.Label" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="EmailBox.PlaceholderText" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="EmailMenuItem.Text" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="ExistingUserCard.ActionButtonText" xml:space="preserve">
+    <value>Iniciar sesión</value>
+  </data>
+  <data name="ExistingUserCard.HeaderText" xml:space="preserve">
+    <value>Usuario existente</value>
+  </data>
+  <data name="FixedTypeBlock.Text" xml:space="preserve">
+    <value>El servicio tiene un precio fijo.</value>
+  </data>
+  <data name="FixedTypeButton.Content" xml:space="preserve">
+    <value>Fijo</value>
+  </data>
+  <data name="FreebieTypeBlock.Text" xml:space="preserve">
+    <value>El servicio es gratuito.</value>
+  </data>
+  <data name="FreebieTypeButton.Content" xml:space="preserve">
+    <value>Gratis</value>
+  </data>
+  <data name="LoginRegisterAppBar.Label" xml:space="preserve">
+    <value>Iniciar sesión/Registrarte</value>
+  </data>
+  <data name="LogoutAppBar.Label" xml:space="preserve">
+    <value>Cerrar sesión</value>
+  </data>
+  <data name="MainPageHeader.Text" xml:space="preserve">
+    <value>Findier</value>
+  </data>
+  <data name="MoneyTypeBlock.Text" xml:space="preserve">
+    <value>El precio del servicio se discutira luego con el cliente.</value>
+  </data>
+  <data name="MoneyTypeButton.Content" xml:space="preserve">
+    <value>$$$</value>
+  </data>
+  <data name="NewCommentAppBarButton.Label" xml:space="preserve">
+    <value>Crear comentario</value>
+  </data>
+  <data name="NewCommentCard.ActionButtonText" xml:space="preserve">
+    <value>Publicas</value>
+  </data>
+  <data name="NewCommentCard.HeaderText" xml:space="preserve">
+    <value>Crear comentario</value>
+  </data>
+  <data name="NewPivot.Header" xml:space="preserve">
+    <value>Nuevo</value>
+  </data>
+  <data name="NewUserCard.ActionButtonText" xml:space="preserve">
+    <value>Crear cuenta</value>
+  </data>
+  <data name="NewUserCard.HeaderText" xml:space="preserve">
+    <value>Usuario nuevo</value>
+  </data>
+  <data name="NsfwCheckBox.Content" xml:space="preserve">
+    <value>Es NSFW (contenido inapropiado)</value>
+  </data>
+  <data name="PasswordBox.PlaceholderText" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="PhoneNumberBox.PlaceholderText" xml:space="preserve">
+    <value>Numero de telefono</value>
+  </data>
+  <data name="PostCard.ActionButtonText" xml:space="preserve">
+    <value>Contactar</value>
+  </data>
+  <data name="PostDetailsCard.HeaderText" xml:space="preserve">
+    <value>Detalles del servicio</value>
+  </data>
+  <data name="PostPageHeader.Text" xml:space="preserve">
+    <value>Servicio</value>
+  </data>
+  <data name="PostTypeCard.ActionButtonText" xml:space="preserve">
+    <value>Publicar</value>
+  </data>
+  <data name="PostTypeCard.HeaderText" xml:space="preserve">
+    <value>Tipo de servicio</value>
+  </data>
+  <data name="PostTypeEditCard.ActionButtonText" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="PostTypeEditCard.HeaderText" xml:space="preserve">
+    <value>Tipo de servicio</value>
+  </data>
+  <data name="ReviewAppBar.Label" xml:space="preserve">
+    <value>Califica la aplicación</value>
+  </data>
+  <data name="TextBox.PlaceholderText" xml:space="preserve">
+    <value>Texto</value>
+  </data>
+  <data name="TextMenuItem.Text" xml:space="preserve">
+    <value>Texto</value>
+  </data>
+  <data name="TitleBox.PlaceholderText" xml:space="preserve">
+    <value>Titulo</value>
+  </data>
+  <data name="TopPivot.Header" xml:space="preserve">
+    <value>Popular</value>
+  </data>
+  <data name="UsernameBox.PlaceholderText" xml:space="preserve">
+    <value>Nombre de usuario</value>
+  </data>
+</root>

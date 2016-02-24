@@ -18,12 +18,12 @@ namespace Findier.Windows.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {
-        private FinboardCollection _finboardCollection;
+        private CategoriesCollection _categoriesCollection;
 
         public MainViewModel(IFindierService findierService)
         {
             FindierService = findierService;
-            FinboardClickCommand = new DelegateCommand<ItemClickEventArgs>(FinboardClickExecute);
+            CategoryClickCommand = new DelegateCommand<ItemClickEventArgs>(CategoryClickExecute);
             LoginCommand = new DelegateCommand(LoginExecute);
             LogoutCommand = new DelegateCommand(LogoutExecute);
             ContactCommand = new DelegateCommand(ContactExecute);
@@ -37,17 +37,17 @@ namespace Findier.Windows.ViewModels
 
         public DelegateCommand ContactCommand { get; }
 
-        public DelegateCommand<ItemClickEventArgs> FinboardClickCommand { get; }
+        public DelegateCommand<ItemClickEventArgs> CategoryClickCommand { get; }
 
-        public FinboardCollection FinboardCollection
+        public CategoriesCollection CategoriesCollection
         {
             get
             {
-                return _finboardCollection;
+                return _categoriesCollection;
             }
             set
             {
-                Set(ref _finboardCollection, value);
+                Set(ref _categoriesCollection, value);
             }
         }
 
@@ -64,7 +64,7 @@ namespace Findier.Windows.ViewModels
             NavigationMode mode,
             IDictionary<string, object> state)
         {
-            FinboardCollection = new FinboardCollection(new GetFinboardsRequest(Country.PR).Limit(20), FindierService);
+            CategoriesCollection = new CategoriesCollection(new GetCategoriesRequest(Country.PR).Limit(20), FindierService);
         }
 
         private async void ContactExecute()
@@ -77,10 +77,10 @@ namespace Findier.Windows.ViewModels
             await EmailManager.ShowComposeNewEmailAsync(mail);
         }
 
-        private void FinboardClickExecute(ItemClickEventArgs args)
+        private void CategoryClickExecute(ItemClickEventArgs args)
         {
-            var finboard = (Finboard)args.ClickedItem;
-            NavigationService.Navigate(typeof (FinboardPage), finboard);
+            var finboard = (Category)args.ClickedItem;
+            NavigationService.Navigate(typeof (CategoryPage), finboard);
         }
 
         private void LoginExecute()

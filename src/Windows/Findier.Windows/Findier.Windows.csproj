@@ -93,6 +93,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="project.json" />
+    <PRIResource Include="Strings\es-PR\Resources.resw" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -189,7 +191,7 @@
     <Compile Include="Extensions\PackageVersionExtensions.cs" />
     <Compile Include="Extensions\VisualTreeHelperExtensions.cs" />
     <Compile Include="IncrementalLoading\CommentCollection.cs" />
-    <Compile Include="IncrementalLoading\FinboardCollection.cs" />
+    <Compile Include="IncrementalLoading\CategoriesCollection.cs" />
     <Compile Include="IncrementalLoading\PlainPostCollection.cs" />
     <Compile Include="Interactions\CloseFlyoutAction.cs" />
     <Compile Include="Interactions\NavigateToPageAction.cs" />
@@ -223,7 +225,7 @@
     <Compile Include="Utilities\ApplicationUtility.cs" />
     <Compile Include="ViewModels\AuthenticationViewModel.cs" />
     <Compile Include="ViewModels\EditPostViewModel.cs" />
-    <Compile Include="ViewModels\FinboardViewModel.cs" />
+    <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NewCommentViewModel.cs" />
@@ -249,8 +251,8 @@
     <Compile Include="Views\PostPage.xaml.cs">
       <DependentUpon>PostPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FinboardPage.xaml.cs">
-      <DependentUpon>FinboardPage.xaml</DependentUpon>
+    <Compile Include="Views\CategoryPage.xaml.cs">
+      <DependentUpon>CategoryPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -317,7 +319,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\FinboardPage.xaml">
+    <Page Include="Views\CategoryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -349,6 +351,7 @@
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

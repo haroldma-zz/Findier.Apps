@@ -10,7 +10,7 @@ namespace Findier.Windows.ViewModels
 
         public EditPostViewModel EditPost => Kernel.Resolve<EditPostViewModel>();
 
-        public FinboardViewModel Finboard => Kernel.Resolve<FinboardViewModel>();
+        public CategoryViewModel Category => Kernel.Resolve<CategoryViewModel>();
 
         public LoginViewModel Login => Kernel.Resolve<LoginViewModel>();
 

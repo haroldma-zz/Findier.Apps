@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
+using Windows.Globalization;
 using Windows.UI.Xaml;
 using Findier.Core.Utilities.Interfaces;
 using Findier.Web.Services;
@@ -23,6 +24,7 @@ namespace Findier.Windows
                 WindowsCollectors.Metadata |
                     WindowsCollectors.Session);
             InitializeComponent();
+            ApplicationLanguages.PrimaryLanguageOverride = "es-PR";
         }
 
         public static new App Current => Application.Current as App;

@@ -6,30 +6,30 @@ using Findier.Web.Responses;
 
 namespace Findier.Web.Requests
 {
-    public class GetFinboardsRequest : FindierBaseRequest<FindierPageData<Finboard>>
+    public class GetCategoriesRequest : FindierBaseRequest<FindierPageData<Category>>
     {
-        public GetFinboardsRequest(Country country) : base("finboards")
+        public GetCategoriesRequest(Country country) : base("categories")
         {
             this.Query(nameof(country), country);
         }
 
-        public GetFinboardsRequest Limit(int count)
+        public GetCategoriesRequest Limit(int count)
         {
             return this.Query("limit", count);
         }
 
-        public GetFinboardsRequest Offset(int offset)
+        public GetCategoriesRequest Offset(int offset)
         {
             return this.Query("offset", offset);
         }
 
-        public override FindierPageData<Finboard> ToDummyData()
+        public override FindierPageData<Category> ToDummyData()
         {
-            return new FindierPageData<Finboard>
+            return new FindierPageData<Category>
             {
-                Results = new List<Finboard>
+                Results = new List<Category>
                 {
-                    new Finboard
+                    new Category
                     {
                         Title = "Lol",
                         Description = "Fun stuff!"

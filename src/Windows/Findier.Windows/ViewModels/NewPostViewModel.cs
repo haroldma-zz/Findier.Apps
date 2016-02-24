@@ -19,7 +19,7 @@ namespace Findier.Windows.ViewModels
 
         private string _email;
 
-        private PlainFinboard _finboard;
+        private PlainCategory _category;
         private bool _isFixed;
         private bool _isFreebie;
         private bool _isLoading;
@@ -162,7 +162,7 @@ namespace Findier.Windows.ViewModels
 
         public override void OnNavigatedTo(object parameter, NavigationMode mode, IDictionary<string, object> state)
         {
-            _finboard = (PlainFinboard)parameter;
+            _category = (PlainCategory)parameter;
         }
 
         private async void PublishExecute()
@@ -220,7 +220,7 @@ namespace Findier.Windows.ViewModels
                 return;
             }
 
-            var createPostRequest = new CreatePostRequest(_finboard.Id,
+            var createPostRequest = new CreatePostRequest(_category.Id,
                 Title,
                 Text,
                 type,

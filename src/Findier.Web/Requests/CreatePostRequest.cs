@@ -8,7 +8,7 @@ namespace Findier.Web.Requests
     public class CreatePostRequest : FindierBaseRequest<string>
     {
         public CreatePostRequest(
-            string finboardId,
+            string categoryId,
             string title,
             string text,
             PostType type,
@@ -18,7 +18,7 @@ namespace Findier.Web.Requests
             string phoneNumber = null) : base("posts")
         {
             this.Post()
-                .Parameter(nameof(finboardId), finboardId)
+                .Parameter(nameof(categoryId), categoryId)
                 .Parameter(nameof(title), title)
                 .Parameter(nameof(text), text)
                 .Parameter(nameof(type), type.ToString())

@@ -10,13 +10,13 @@ using Findier.Windows.Views;
 
 namespace Findier.Windows.ViewModels
 {
-    public class FinboardViewModel : ViewModelBase
+    public class CategoryViewModel : ViewModelBase
     {
         private readonly IFindierService _findierService;
-        private Finboard _finboard;
+        private Category _category;
         private PlainPostCollection _postCollection;
 
-        public FinboardViewModel(IFindierService findierService)
+        public CategoryViewModel(IFindierService findierService)
         {
             _findierService = findierService;
             PostClickCommand = new DelegateCommand<ItemClickEventArgs>(PostClickExecute);
@@ -28,15 +28,15 @@ namespace Findier.Windows.ViewModels
             }
         }
 
-        public Finboard Finboard
+        public Category Category
         {
             get
             {
-                return _finboard;
+                return _category;
             }
             set
             {
-                Set(ref _finboard, value);
+                Set(ref _category, value);
             }
         }
 
@@ -61,14 +61,14 @@ namespace Findier.Windows.ViewModels
             NavigationMode mode,
             IDictionary<string, object> state)
         {
-            Finboard = (Finboard)parameter;
-            var postsRequest = new GetFinboardFeedRequest(Finboard.Id).Limit(20);
+            Category = (Category)parameter;
+            var postsRequest = new GetCategoryPostsRequest(Category.Id).Limit(20);
             PostCollection = new PlainPostCollection(postsRequest, _findierService);
         }
 
         private void NewPostExecute()
         {
-            NavigationService.Navigate(typeof (NewPostPage), Finboard);
+            NavigationService.Navigate(typeof (NewPostPage), Category);
         }
 
         private void PostClickExecute(ItemClickEventArgs args)
