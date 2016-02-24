@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="Findier.Windows.Views.NewCommentPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Findier.Windows.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Findier.Windows.Controls"
+    mc:Ignorable="d"
+    DataContext="{Binding NewComment, Source={StaticResource ViewModelLocator}}">
+
+    <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+        <controls:MaterialCard Margin="0, 10, 0, 0" HeaderText="New comment"
+                               ActionButtonVisibility="Visible"
+                               IsLoading="{Binding IsLoading}"
+                               IsEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}"
+                               ActionButtonText="Publish"
+                               ActionButtonCommand="{Binding PublishCommand}">
+            <TextBox PlaceholderText="Text" Style="{StaticResource MaterialTextBoxStyle}" AcceptsReturn="True"
+                     TextWrapping="Wrap" MinHeight="150"
+                     Text="{Binding Text, Mode=TwoWay}" />
+        </controls:MaterialCard>
+    </Grid>
+</Page>

@@ -14,6 +14,8 @@ namespace Findier.Windows.ViewModels
 
         public MainViewModel Main => Kernel.Resolve<MainViewModel>();
 
+        public NewCommentViewModel NewComment => Kernel.Resolve<NewCommentViewModel>();
+
         public NewPostViewModel NewPost => Kernel.Resolve<NewPostViewModel>();
 
         public PostViewModel Post => Kernel.Resolve<PostViewModel>();

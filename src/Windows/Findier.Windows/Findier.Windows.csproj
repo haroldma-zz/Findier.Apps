@@ -225,6 +225,7 @@
     <Compile Include="ViewModels\FinboardViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\NewCommentViewModel.cs" />
     <Compile Include="ViewModels\NewPostViewModel.cs" />
     <Compile Include="ViewModels\PostViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
@@ -234,6 +235,9 @@
     </Compile>
     <Compile Include="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewCommentPage.xaml.cs">
+      <DependentUpon>NewCommentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\NewPostPage.xaml.cs">
       <DependentUpon>NewPostPage.xaml</DependentUpon>
@@ -290,6 +294,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NewCommentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -11,6 +11,7 @@ using Findier.Windows.Common;
 using Findier.Windows.Engine.Mvvm;
 using Findier.Windows.IncrementalLoading;
 using Findier.Windows.Services;
+using Findier.Windows.Views;
 
 namespace Findier.Windows.ViewModels
 {
@@ -29,6 +30,7 @@ namespace Findier.Windows.ViewModels
             CallCommand = new DelegateCommand(CallExecute);
             TextCommand = new DelegateCommand(TextExecute);
             EmailCommand = new DelegateCommand(EmailExecute);
+            NewCommentCommand = new DelegateCommand(NewCommentExecute);
 
             if (IsInDesignMode)
             {
@@ -51,6 +53,8 @@ namespace Findier.Windows.ViewModels
         }
 
         public DelegateCommand EmailCommand { get; }
+
+        public DelegateCommand NewCommentCommand { get; }
 
         public Post Post
         {
@@ -111,6 +115,11 @@ namespace Findier.Windows.ViewModels
                 {
                     { "PostId", Post.Id }
                 });
+        }
+
+        private void NewCommentExecute()
+        {
+            NavigationService.Navigate(typeof (NewCommentPage), Post.Id);
         }
 
         private async void TextExecute()
