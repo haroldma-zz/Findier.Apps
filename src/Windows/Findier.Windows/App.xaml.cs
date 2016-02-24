@@ -24,7 +24,6 @@ namespace Findier.Windows
                 WindowsCollectors.Metadata |
                     WindowsCollectors.Session);
             InitializeComponent();
-            ApplicationLanguages.PrimaryLanguageOverride = "es-PR";
         }
 
         public static new App Current => Application.Current as App;

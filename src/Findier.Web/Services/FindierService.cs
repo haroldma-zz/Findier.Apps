@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Globalization;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
@@ -57,6 +58,7 @@ namespace Findier.Web.Services
 
         public async Task<RestResponse<OAuthData>> LoginAsync(OAuthRequest request)
         {
+            request.Header("Accept-Language", CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
             var response = await request.ToResponseAsync();
             if (response.IsSuccessStatusCode)
             {
@@ -74,6 +76,7 @@ namespace Findier.Web.Services
 
         public async Task<RestResponse<OAuthData>> RegisterAsync(CreateUserRequest request)
         {
+            request.Header("Accept-Language", CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
             var response = await request.ToResponseAsync();
             if (response.IsSuccessStatusCode)
             {
@@ -99,6 +102,8 @@ namespace Findier.Web.Services
                 request.Headers.Remove("Authorization");
             }
 
+            request.Header("Accept-Language", CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
+
             return request.ToResponseAsync();
         }
 
@@ -118,6 +123,8 @@ namespace Findier.Web.Services
             {
                 request.Headers.Remove("Authorization");
             }
+
+            request.Header("Accept-Language", CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
 
             return request.ToResponseAsync();
         }
