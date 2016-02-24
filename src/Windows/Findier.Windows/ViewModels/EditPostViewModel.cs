@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using System.Globalization;
 using Windows.UI.Xaml.Navigation;
 using Findier.Core.Extensions;
 using Findier.Web.Enums;
@@ -12,31 +13,61 @@ using Findier.Windows.Views;
 
 namespace Findier.Windows.ViewModels
 {
-    public class NewPostViewModel : ViewModelBase
+    public class EditPostViewModel : ViewModelBase
     {
         private readonly IFindierService _findierService;
         private readonly IInsightsService _insightsService;
 
-        private string _email;
+        private bool _canEditNsfw;
 
-        private PlainFinboard _finboard;
+        private string _email;
         private bool _isFixed;
         private bool _isFreebie;
         private bool _isLoading;
         private bool _isMoney = true;
         private bool _isNsfw;
         private string _phoneNumber;
+
+        private Post _post;
         private string _price;
         private string _text;
         private string _title;
 
-        public NewPostViewModel(IFindierService findierService, IInsightsService insightsService)
+        public EditPostViewModel(IFindierService findierService, IInsightsService insightsService)
         {
             _findierService = findierService;
             _insightsService = insightsService;
 
-            PublishCommand = new DelegateCommand(PublishExecute);
+            EditCommand = new DelegateCommand(EditExecute);
+
+            if (IsInDesignMode)
+            {
+                OnNavigatedTo(new Post
+                {
+                    Title = "5 dollar app icons",
+                    Text =
+                        "Studying gfx design and trying to do some freelance work on the side.\n\nCan do flat and minimilistic look. Text or icon based.",
+                    Email = "doe@test.com",
+                    IsNsfw = true
+                },
+                    NavigationMode.New,
+                    new Dictionary<string, object>());
+            }
         }
+
+        public bool CanEditNsfw
+        {
+            get
+            {
+                return _canEditNsfw;
+            }
+            set
+            {
+                Set(ref _canEditNsfw, value);
+            }
+        }
+
+        public DelegateCommand EditCommand { get; }
 
         public string Email
         {
@@ -134,8 +165,6 @@ namespace Findier.Windows.ViewModels
             }
         }
 
-        public DelegateCommand PublishCommand { get; }
-
         public string Text
         {
             get
@@ -160,12 +189,26 @@ namespace Findier.Windows.ViewModels
             }
         }
 
-        public override void OnNavigatedTo(object parameter, NavigationMode mode, IDictionary<string, object> state)
+        public override sealed void OnNavigatedTo(
+            object parameter,
+            NavigationMode mode,
+            IDictionary<string, object> state)
         {
-            _finboard = (PlainFinboard)parameter;
+            _post = (Post)parameter;
+            CanEditNsfw = !_post.IsNsfw;
+            Title = _post.Title;
+            Text = _post.Text;
+            IsNsfw = _post.IsNsfw;
+            Price = _post.Price.ToString(CultureInfo.InvariantCulture);
+            Email = _post.Email;
+            PhoneNumber = _post.PhoneNumber;
+
+            IsMoney = _post.Type == PostType.Money;
+            IsFixed = _post.Type == PostType.Fixed;
+            IsFreebie = _post.Type == PostType.Freebie;
         }
 
-        private async void PublishExecute()
+        private async void EditExecute()
         {
             if (!_findierService.IsAuthenticated)
             {
@@ -190,17 +233,6 @@ namespace Findier.Windows.ViewModels
                 type = PostType.Money;
             }
 
-            if (string.IsNullOrWhiteSpace(Title))
-            {
-                CurtainPrompt.ShowError("Don't forget to set a title!");
-                return;
-            }
-            if (Title.Length < 5)
-            {
-                CurtainPrompt.ShowError("The title is a bit too short.");
-                return;
-            }
-
             if (!string.IsNullOrWhiteSpace(Email) && !Email.IsEmail())
             {
                 CurtainPrompt.ShowError("Please enter a valid email.");
@@ -220,28 +252,27 @@ namespace Findier.Windows.ViewModels
                 return;
             }
 
-            var createPostRequest = new CreatePostRequest(_finboard.Id,
-                Title,
-                Text,
-                type,
-                price,
-                IsNsfw,
-                Email,
-                PhoneNumber);
+            var editPostRequest = new EditPostRequest(_post.Id,
+                _post.Text == Text ? null : Text,
+                _post.Type == type ? null : (PostType?)type,
+                _post.Price == price ? null : (decimal?)price,
+                _post.IsNsfw == IsNsfw || !CanEditNsfw ? null : (bool?)IsNsfw,
+                _post.Email == Email ? null : Email,
+                _post.PhoneNumber == PhoneNumber ? null : PhoneNumber);
 
             IsLoading = true;
-            var restResponse = await _findierService.SendAsync<CreatePostRequest, string>(createPostRequest);
+            var restResponse = await _findierService.SendAsync(editPostRequest);
             IsLoading = false;
 
             if (restResponse.IsSuccessStatusCode)
             {
-                CurtainPrompt.Show("You post is live!");
+                CurtainPrompt.Show("Edit was saved.");
                 NavigationService.GoBack();
             }
             else
             {
                 CurtainPrompt.ShowError(restResponse.DeserializedResponse?.Error
-                    ?? "Problem publishing post. Try again later.");
+                    ?? "Problem editing post. Try again later.");
             }
 
             var props = new Dictionary<string, string>();
@@ -251,7 +282,7 @@ namespace Findier.Windows.ViewModels
                 props.Add("Error", restResponse.DeserializedResponse?.Error ?? "Unknown");
                 props.Add("StatusCode", restResponse.StatusCode.ToString());
             }
-            _insightsService.TrackEvent("PublishPost", props);
+            _insightsService.TrackEvent("EditPost", props);
         }
     }
 }

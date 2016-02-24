@@ -71,6 +71,7 @@
     <Compile Include="Requests\DeletePostRequest.cs" />
     <Compile Include="Requests\DownvoteCommentRequest.cs" />
     <Compile Include="Requests\DownvotePostRequest.cs" />
+    <Compile Include="Requests\EditPostRequest.cs" />
     <Compile Include="Requests\GetFinboardsRequest.cs" />
     <Compile Include="Requests\FindierBaseRequest.cs" />
     <Compile Include="Requests\GetFinboardFeedRequest.cs" />

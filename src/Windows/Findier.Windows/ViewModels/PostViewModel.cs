@@ -147,6 +147,7 @@ namespace Findier.Windows.ViewModels
 
         private void EditExecute()
         {
+            NavigationService.Navigate(typeof (EditPostPage), Post);
         }
 
         private async void EmailExecute()

@@ -222,6 +222,7 @@
     <Compile Include="Tools\Converters\ZeroToVisibilityConverter.cs" />
     <Compile Include="Utilities\ApplicationUtility.cs" />
     <Compile Include="ViewModels\AuthenticationViewModel.cs" />
+    <Compile Include="ViewModels\EditPostViewModel.cs" />
     <Compile Include="ViewModels\FinboardViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -238,6 +239,9 @@
     </Compile>
     <Compile Include="Views\NewCommentPage.xaml.cs">
       <DependentUpon>NewCommentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditPostPage.xaml.cs">
+      <DependentUpon>EditPostPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\NewPostPage.xaml.cs">
       <DependentUpon>NewPostPage.xaml</DependentUpon>
@@ -300,6 +304,10 @@
     <Page Include="Views\NewCommentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditPostPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\NewPostPage.xaml">
       <SubType>Designer</SubType>

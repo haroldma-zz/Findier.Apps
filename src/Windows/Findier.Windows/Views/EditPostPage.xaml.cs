@@ -1,8 +1,8 @@
 ﻿namespace Findier.Windows.Views
 {
-    public sealed partial class NewPostPage
+    public sealed partial class EditPostPage
     {
-        public NewPostPage()
+        public EditPostPage()
         {
             InitializeComponent();
         }

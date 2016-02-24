@@ -8,6 +8,8 @@ namespace Findier.Windows.ViewModels
 
         public AuthenticationViewModel Authentication => Kernel.Resolve<AuthenticationViewModel>();
 
+        public EditPostViewModel EditPost => Kernel.Resolve<EditPostViewModel>();
+
         public FinboardViewModel Finboard => Kernel.Resolve<FinboardViewModel>();
 
         public LoginViewModel Login => Kernel.Resolve<LoginViewModel>();
