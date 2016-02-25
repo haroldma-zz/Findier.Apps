@@ -17,7 +17,7 @@
             <converters:VisibilityConverter x:Key="ReverseVisibilityConverter" IsReverse="True" />
 
             <DataTemplate x:Key="PostTemplate">
-                <controls:MaterialCard HeaderText="{Binding HeaderText}">
+                <controls:MaterialCard Header="{Binding HeaderText}">
                     <StackPanel>
                         <TextBlock Text="{Binding Title}" TextWrapping="Wrap" />
                     </StackPanel>

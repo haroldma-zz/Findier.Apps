@@ -10,7 +10,7 @@
 
     <ScrollViewer Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
         <StackPanel>
-            <controls:MaterialCard x:Uid="PostDetailsCard" Margin="0,10,0,0" HeaderText="Post details"
+            <controls:MaterialCard x:Uid="PostDetailsCard" Margin="0,10,0,0" Header="Post details"
                                    IsEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}">
                 <StackPanel>
                     <TextBox x:Uid="TitleBox" PlaceholderText="Title"
@@ -28,7 +28,7 @@
                               Margin="0,10,0,0" />
                 </StackPanel>
             </controls:MaterialCard>
-            <controls:MaterialCard x:Uid="ContactDetailsCard" Margin="0,10,0,0" HeaderText="Contact details"
+            <controls:MaterialCard x:Uid="ContactDetailsCard" Margin="0,10,0,0" Header="Contact details"
                                    IsEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}">
                 <StackPanel>
                     <TextBox x:Uid="EmailBox" PlaceholderText="Email" Style="{StaticResource MaterialTextBoxStyle}"
@@ -39,7 +39,7 @@
                                Foreground="{ThemeResource TextBoxPlaceholderTextThemeBrush}" Margin="0,10,0,0" />
                 </StackPanel>
             </controls:MaterialCard>
-            <controls:MaterialCard x:Uid="PostTypeEditCard" Margin="0,5,0,0" HeaderText="Post type"
+            <controls:MaterialCard x:Uid="PostTypeEditCard" Margin="0,5,0,0" Header="Post type"
                                    IsEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}"
                                    ActionButtonVisibility="Visible"
                                    ActionButtonText="Edit"

@@ -31,8 +31,8 @@ namespace Findier.Windows.Controls
                 typeof (MaterialCard),
                 new PropertyMetadata(Visibility.Collapsed));
 
-        public static readonly DependencyProperty HeaderTextProperty =
-            DependencyProperty.RegisterAttached(nameof(HeaderText),
+        public static readonly DependencyProperty HeaderProperty =
+            DependencyProperty.RegisterAttached(nameof(Header),
                 typeof (string),
                 typeof (MaterialCard),
                 null);
@@ -104,15 +104,15 @@ namespace Findier.Windows.Controls
             }
         }
 
-        public string HeaderText
+        public string Header
         {
             get
             {
-                return (string)GetValue(HeaderTextProperty);
+                return (string)GetValue(HeaderProperty);
             }
             set
             {
-                SetValue(HeaderTextProperty, value);
+                SetValue(HeaderProperty, value);
             }
         }
 

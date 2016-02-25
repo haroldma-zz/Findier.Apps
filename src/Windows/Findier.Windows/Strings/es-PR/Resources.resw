@@ -135,7 +135,7 @@
   <data name="CommentsBlock.Text" xml:space="preserve">
     <value>Commentarios</value>
   </data>
-  <data name="ContactDetailsCard.HeaderText" xml:space="preserve">
+  <data name="ContactDetailsCard.Header" xml:space="preserve">
     <value>Informacion de contacto</value>
   </data>
   <data name="ContactRequirementBlock.Text" xml:space="preserve">
@@ -162,7 +162,7 @@
   <data name="ExistingUserCard.ActionButtonText" xml:space="preserve">
     <value>Iniciar sesión</value>
   </data>
-  <data name="ExistingUserCard.HeaderText" xml:space="preserve">
+  <data name="ExistingUserCard.Header" xml:space="preserve">
     <value>Usuario existente</value>
   </data>
   <data name="FixedTypeBlock.Text" xml:space="preserve">
@@ -201,7 +201,7 @@
   <data name="NewCommentCard.ActionButtonText" xml:space="preserve">
     <value>Publicas</value>
   </data>
-  <data name="NewCommentCard.HeaderText" xml:space="preserve">
+  <data name="NewCommentCard.Header" xml:space="preserve">
     <value>Crear comentario</value>
   </data>
   <data name="NewPivot.Header" xml:space="preserve">
@@ -210,7 +210,7 @@
   <data name="NewUserCard.ActionButtonText" xml:space="preserve">
     <value>Crear cuenta</value>
   </data>
-  <data name="NewUserCard.HeaderText" xml:space="preserve">
+  <data name="NewUserCard.Header" xml:space="preserve">
     <value>Usuario nuevo</value>
   </data>
   <data name="NsfwCheckBox.Content" xml:space="preserve">
@@ -225,7 +225,7 @@
   <data name="PostCard.ActionButtonText" xml:space="preserve">
     <value>Contactar</value>
   </data>
-  <data name="PostDetailsCard.HeaderText" xml:space="preserve">
+  <data name="PostDetailsCard.Header" xml:space="preserve">
     <value>Detalles del servicio</value>
   </data>
   <data name="PostPageHeader.Text" xml:space="preserve">
@@ -234,13 +234,13 @@
   <data name="PostTypeCard.ActionButtonText" xml:space="preserve">
     <value>Publicar</value>
   </data>
-  <data name="PostTypeCard.HeaderText" xml:space="preserve">
+  <data name="PostTypeCard.Header" xml:space="preserve">
     <value>Tipo de servicio</value>
   </data>
   <data name="PostTypeEditCard.ActionButtonText" xml:space="preserve">
     <value>Editar</value>
   </data>
-  <data name="PostTypeEditCard.HeaderText" xml:space="preserve">
+  <data name="PostTypeEditCard.Header" xml:space="preserve">
     <value>Tipo de servicio</value>
   </data>
   <data name="ReviewAppBar.Label" xml:space="preserve">

@@ -135,7 +135,7 @@
   <data name="CommentsBlock.Text" xml:space="preserve">
     <value>Comments</value>
   </data>
-  <data name="ContactDetailsCard.HeaderText" xml:space="preserve">
+  <data name="ContactDetailsCard.Header" xml:space="preserve">
     <value>Contact details</value>
   </data>
   <data name="ContactRequirementBlock.Text" xml:space="preserve">
@@ -162,7 +162,7 @@
   <data name="ExistingUserCard.ActionButtonText" xml:space="preserve">
     <value>Login</value>
   </data>
-  <data name="ExistingUserCard.HeaderText" xml:space="preserve">
+  <data name="ExistingUserCard.Header" xml:space="preserve">
     <value>Existing user</value>
   </data>
   <data name="FixedTypeBlock.Text" xml:space="preserve">
@@ -201,7 +201,7 @@
   <data name="NewCommentCard.ActionButtonText" xml:space="preserve">
     <value>Publish</value>
   </data>
-  <data name="NewCommentCard.HeaderText" xml:space="preserve">
+  <data name="NewCommentCard.Header" xml:space="preserve">
     <value>New comment</value>
   </data>
   <data name="NewPivot.Header" xml:space="preserve">
@@ -210,7 +210,7 @@
   <data name="NewUserCard.ActionButtonText" xml:space="preserve">
     <value>Create account</value>
   </data>
-  <data name="NewUserCard.HeaderText" xml:space="preserve">
+  <data name="NewUserCard.Header" xml:space="preserve">
     <value>New user</value>
   </data>
   <data name="NsfwCheckBox.Content" xml:space="preserve">
@@ -225,7 +225,7 @@
   <data name="PostCard.ActionButtonText" xml:space="preserve">
     <value>Contact</value>
   </data>
-  <data name="PostDetailsCard.HeaderText" xml:space="preserve">
+  <data name="PostDetailsCard.Header" xml:space="preserve">
     <value>Post details</value>
   </data>
   <data name="PostPageHeader.Text" xml:space="preserve">
@@ -240,7 +240,7 @@
   <data name="PostTypeEditCard.ActionButtonText" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="PostTypeEditCard.HeaderText" xml:space="preserve">
+  <data name="PostTypeEditCard.Header" xml:space="preserve">
     <value>Post type</value>
   </data>
   <data name="ReviewAppBar.Label" xml:space="preserve">

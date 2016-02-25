@@ -28,7 +28,7 @@
                 <ListView Padding="0,5,0,0" ItemsSource="{Binding CategoriesCollection}" IsItemClickEnabled="True" SelectionMode="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <controls:MaterialCard HeaderText="{Binding Title}">
+                            <controls:MaterialCard Header="{Binding Title}">
                                 <StackPanel>
                                     <TextBlock Text="{Binding Description}" Visibility="{Binding Description, Converter={StaticResource NullToVisibilityConverter}}" TextWrapping="Wrap" />
                                 </StackPanel>

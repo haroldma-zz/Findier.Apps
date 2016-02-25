@@ -9,7 +9,7 @@
     DataContext="{Binding Register, Source={StaticResource ViewModelLocator}}">
 
     <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-        <controls:MaterialCard x:Uid="NewUserCard" Margin="0,10,0,0" HeaderText="New user"
+        <controls:MaterialCard x:Uid="NewUserCard" Margin="0,10,0,0" Header="New user"
                                IsLoading="{Binding IsLoading}"
                                ActionButtonVisibility="Visible"
                                ActionButtonText="Create account"

@@ -29,7 +29,7 @@
             <ListView.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <controls:MaterialCard x:Uid="PostCard" HeaderText="{Binding Post.HeaderText}" 
+                        <controls:MaterialCard x:Uid="PostCard" Header="{Binding Post.HeaderText}" 
                                                ActionButtonText="Contact" 
                                                ActionButtonVisibility="Visible">
                             <controls:MaterialCard.ActionButtonFlyout>
@@ -53,7 +53,7 @@
             </ListView.HeaderTemplate>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <controls:MaterialCard HeaderText="{Binding HeaderText}">
+                    <controls:MaterialCard Header="{Binding HeaderText}">
                         <StackPanel>
                             <TextBlock Text="{Binding Text}" TextWrapping="Wrap" />
                         </StackPanel>

@@ -10,7 +10,7 @@
     DataContext="{Binding NewComment, Source={StaticResource ViewModelLocator}}">
 
     <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-        <controls:MaterialCard x:Uid="NewCommentCard" Margin="0, 10, 0, 0" HeaderText="New comment"
+        <controls:MaterialCard x:Uid="NewCommentCard" Margin="0, 10, 0, 0" Header="New comment"
                                ActionButtonVisibility="Visible"
                                IsLoading="{Binding IsLoading}"
                                IsEnabled="{Binding IsLoading, Converter={StaticResource NotConverter}}"

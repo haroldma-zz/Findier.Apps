@@ -21,8 +21,7 @@
                                 Canvas.ZIndex="2">
                             <Grid>
                                 <StackPanel Margin="20">
-                                    <TextBlock Text="{TemplateBinding HeaderText}" Foreground="{ThemeResource AppBarSeparatorForegroundThemeBrush}" FontSize="16"
-                                               FontFamily="Global User Interface" />
+                                    <TextBlock Text="{TemplateBinding Header}" Foreground="{ThemeResource AppBarSeparatorForegroundThemeBrush}" FontSize="16" />
                                     <ProgressBar IsIndeterminate="{TemplateBinding IsLoading}"
                                                  Visibility="{Binding IsIndeterminate, Converter={StaticResource VisibilityConverter}, RelativeSource={RelativeSource Mode=Self}}" />
                                     <ContentPresenter Content="{TemplateBinding Content}"
