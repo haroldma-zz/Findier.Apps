@@ -90,23 +90,14 @@ namespace Findier.Windows.ViewModels
 
         public DelegateCommand TextCommand { get; }
 
-        public override sealed async void OnNavigatedTo(
+        public override sealed void OnNavigatedTo(
             object parameter,
             NavigationMode mode,
             IDictionary<string, object> state)
         {
-            var postResponse =
-                await _findierService.SendAsync<GetPostRequest, Post>(new GetPostRequest(parameter as string));
-            if (!postResponse.IsSuccessStatusCode)
-            {
-                CurtainPrompt.ShowError(postResponse.DeserializedResponse?.Error ?? "Problem loading post.");
-                NavigationService.GoBack();
-                return;
-            }
-
-            Post = postResponse.DeserializedResponse.Data;
+            Post = (Post)parameter;
             CanEdit = Post.User == _findierService.CurrentUser;
-            var commentsRequest = new GetPostCommentsRequest(parameter as string).Limit(20);
+            var commentsRequest = new GetPostCommentsRequest(Post.Id).Limit(20);
             CommentCollection = new CommentCollection(commentsRequest, _findierService);
         }
 

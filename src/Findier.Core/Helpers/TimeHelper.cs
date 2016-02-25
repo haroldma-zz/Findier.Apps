@@ -4,7 +4,7 @@ namespace Findier.Core.Helpers
 {
     public static class TimeHelper
     {
-        public static DateTime EpochTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+        public static DateTime EpochTime = new DateTime(1970, 1, 1);
 
         public static DateTime FromUnixTimeStamp(double time)
         {

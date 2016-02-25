@@ -10,19 +10,19 @@ using Findier.Windows.Common;
 
 namespace Findier.Windows.IncrementalLoading
 {
-    public class PlainPostsCollection : IncrementalLoadingBase<PlainPost>
+    public class PostsCollection : IncrementalLoadingBase<Post>
     {
         private readonly IFindierService _findierService;
         private readonly GetPostsRequest _request;
-        private FindierResponse<FindierPageData<PlainPost>> _currentResponse;
+        private FindierResponse<FindierPageData<Post>> _currentResponse;
 
-        public PlainPostsCollection(GetPostsRequest request, IFindierService findierService)
+        public PostsCollection(GetPostsRequest request, IFindierService findierService)
         {
             _request = request;
             _findierService = findierService;
         }
 
-        internal PlainPostsCollection(Surrogate surrogate, IFindierService findierService)
+        internal PostsCollection(Surrogate surrogate, IFindierService findierService)
         {
             foreach (var item in surrogate.Items)
             {
@@ -43,10 +43,10 @@ namespace Findier.Windows.IncrementalLoading
             return _currentResponse?.Data?.HasNext ?? true;
         }
 
-        protected override async Task<IList<PlainPost>> LoadMoreItemsOverrideAsync(CancellationToken c, uint count)
+        protected override async Task<IList<Post>> LoadMoreItemsOverrideAsync(CancellationToken c, uint count)
         {
             var response = await _findierService
-                .SendAsync<GetPostsRequest, FindierPageData<PlainPost>>(_request.Offset(Count).Limit((int)count));
+                .SendAsync<GetPostsRequest, FindierPageData<Post>>(_request.Offset(Count).Limit((int)count));
             if (!response.IsSuccessStatusCode)
             {
                 return null;
@@ -67,22 +67,22 @@ namespace Findier.Windows.IncrementalLoading
             {
             }
 
-            internal Surrogate(PlainPostsCollection collection)
+            internal Surrogate(PostsCollection collection)
             {
                 Items = collection.ToList();
                 CurrentResponse = collection._currentResponse;
                 Request = collection._request;
             }
 
-            public FindierResponse<FindierPageData<PlainPost>> CurrentResponse { get; set; }
+            public FindierResponse<FindierPageData<Post>> CurrentResponse { get; set; }
 
-            public List<PlainPost> Items { get; set; }
+            public List<Post> Items { get; set; }
 
             public GetPostsRequest Request { get; set; }
 
-            public PlainPostsCollection ToCollection(IFindierService apiService)
+            public PostsCollection ToCollection(IFindierService apiService)
             {
-                return new PlainPostsCollection(this, apiService);
+                return new PostsCollection(this, apiService);
             }
         }
     }

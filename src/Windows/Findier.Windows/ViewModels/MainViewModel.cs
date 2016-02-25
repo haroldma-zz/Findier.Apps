@@ -19,8 +19,8 @@ namespace Findier.Windows.ViewModels
     public class MainViewModel : ViewModelBase
     {
         private CategoriesCollection _categoriesCollection;
-        private PlainPostsCollection _newPostsCollection;
-        private PlainPostsCollection _topPostsCollection;
+        private PostsCollection _newPostsCollection;
+        private PostsCollection _topPostsCollection;
 
         public MainViewModel(IFindierService findierService)
         {
@@ -40,8 +40,8 @@ namespace Findier.Windows.ViewModels
 
         private void PostClickExecute(ItemClickEventArgs args)
         {
-            var post = (PlainPost)args.ClickedItem;
-            NavigationService.Navigate(typeof(PostPage), post.Id);
+            var post = (Post)args.ClickedItem;
+            NavigationService.Navigate(typeof(PostPage), post);
         }
 
         public DelegateCommand<ItemClickEventArgs> PostClickCommand { get; }
@@ -68,7 +68,7 @@ namespace Findier.Windows.ViewModels
 
         public DelegateCommand LogoutCommand { get; }
 
-        public PlainPostsCollection NewPostsCollection
+        public PostsCollection NewPostsCollection
         {
             get
             {
@@ -82,7 +82,7 @@ namespace Findier.Windows.ViewModels
 
         public DelegateCommand ReviewCommand { get; }
 
-        public PlainPostsCollection TopPostsCollection
+        public PostsCollection TopPostsCollection
         {
             get
             {
@@ -101,8 +101,8 @@ namespace Findier.Windows.ViewModels
         {
             CategoriesCollection = new CategoriesCollection(new GetCategoriesRequest(Country.PR).Limit(20),
                 FindierService);
-            NewPostsCollection = new PlainPostsCollection(new GetPostsRequest(PostSort.New).Limit(20), FindierService);
-            TopPostsCollection = new PlainPostsCollection(new GetPostsRequest(PostSort.Top).Limit(20), FindierService);
+            NewPostsCollection = new PostsCollection(new GetPostsRequest(PostSort.New).Limit(20), FindierService);
+            TopPostsCollection = new PostsCollection(new GetPostsRequest(PostSort.Top).Limit(20), FindierService);
         }
 
         private void CategoryClickExecute(ItemClickEventArgs args)

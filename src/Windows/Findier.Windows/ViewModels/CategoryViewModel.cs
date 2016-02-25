@@ -14,7 +14,7 @@ namespace Findier.Windows.ViewModels
     {
         private readonly IFindierService _findierService;
         private Category _category;
-        private PlainPostsCollection _postsCollection;
+        private PostsCollection _postsCollection;
 
         public CategoryViewModel(IFindierService findierService)
         {
@@ -44,7 +44,7 @@ namespace Findier.Windows.ViewModels
 
         public DelegateCommand<ItemClickEventArgs> PostClickCommand { get; }
 
-        public PlainPostsCollection PostsCollection
+        public PostsCollection PostsCollection
         {
             get
             {
@@ -63,7 +63,7 @@ namespace Findier.Windows.ViewModels
         {
             Category = (Category)parameter;
             var postsRequest = new GetPostsRequest(Category.Id).Limit(20);
-            PostsCollection = new PlainPostsCollection(postsRequest, _findierService);
+            PostsCollection = new PostsCollection(postsRequest, _findierService);
         }
 
         private void NewPostExecute()
@@ -73,8 +73,8 @@ namespace Findier.Windows.ViewModels
 
         private void PostClickExecute(ItemClickEventArgs args)
         {
-            var post = (PlainPost)args.ClickedItem;
-            NavigationService.Navigate(typeof (PostPage), post.Id);
+            var post = (Post)args.ClickedItem;
+            NavigationService.Navigate(typeof (PostPage), post);
         }
     }
 }

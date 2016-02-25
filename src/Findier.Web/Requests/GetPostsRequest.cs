@@ -6,11 +6,11 @@ using Findier.Web.Responses;
 
 namespace Findier.Web.Requests
 {
-    public class GetPostsRequest : FindierBaseRequest<FindierPageData<PlainPost>>
+    public class GetPostsRequest : FindierBaseRequest<FindierPageData<Post>>
     {
         public GetPostsRequest(PostSort sort) : base("posts")
         {
-            this.Parameter(nameof(sort), sort.ToString());
+            this.Query(nameof(sort), sort);
         }
 
         public GetPostsRequest(string id) : base("categories/{id}/posts")
@@ -28,13 +28,18 @@ namespace Findier.Web.Requests
             return this.Query("offset", offset);
         }
 
-        public override FindierPageData<PlainPost> ToDummyData()
+        public GetPostsRequest Sort(PostSort sort)
         {
-            return new FindierPageData<PlainPost>
+            return this.Query("sort", sort);
+        }
+
+        public override FindierPageData<Post> ToDummyData()
+        {
+            return new FindierPageData<Post>
             {
-                Results = new List<PlainPost>
+                Results = new List<Post>
                 {
-                    new PlainPost
+                    new Post
                     {
                         Title = "5 dollar app icons",
                         Text =
@@ -45,7 +50,7 @@ namespace Findier.Web.Requests
                         Type = PostType.Fixed,
                         Price = 5
                     },
-                    new PlainPost
+                    new Post
                     {
                         Title = "Full body massage xoxo",
                         Text =

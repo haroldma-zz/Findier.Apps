@@ -60,7 +60,6 @@
     <Compile Include="Attributes\IncludeGeoLocationAttribute.cs" />
     <Compile Include="Models\DtoBase.cs" />
     <Compile Include="Models\Comment.cs" />
-    <Compile Include="Models\PlainPost.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\PlainCategory.cs" />
