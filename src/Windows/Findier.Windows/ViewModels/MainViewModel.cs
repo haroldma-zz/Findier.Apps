@@ -106,11 +106,12 @@ namespace Findier.Windows.ViewModels
             NavigationMode mode,
             IDictionary<string, object> state)
         {
-            CategoriesCollection = new CategoriesCollection(new GetCategoriesRequest(Country.PR).Limit(20),
+            var country = Country.PR;
+            CategoriesCollection = new CategoriesCollection(new GetCategoriesRequest(country),
                 FindierService);
-            HotPostsCollection = new PostsCollection(new GetPostsRequest(PostSort.Hot), FindierService);
-            NewPostsCollection = new PostsCollection(new GetPostsRequest(PostSort.New), FindierService);
-            TopPostsCollection = new PostsCollection(new GetPostsRequest(PostSort.Top), FindierService);
+            HotPostsCollection = new PostsCollection(new GetPostsRequest(country).Sort(PostSort.Hot), FindierService);
+            NewPostsCollection = new PostsCollection(new GetPostsRequest(country).Sort(PostSort.New), FindierService);
+            TopPostsCollection = new PostsCollection(new GetPostsRequest(country).Sort(PostSort.Top), FindierService);
         }
 
         private void CategoryClickExecute(ItemClickEventArgs args)

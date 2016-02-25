@@ -123,7 +123,7 @@
   <data name="AnonymousUser.ActionButtonText" xml:space="preserve">
     <value>Navegar</value>
   </data>
-  <data name="AnonymousUser.HeaderText" xml:space="preserve">
+  <data name="AnonymousUser.Header" xml:space="preserve">
     <value>Anonimo</value>
   </data>
   <data name="CallMenuItem.Text" xml:space="preserve">

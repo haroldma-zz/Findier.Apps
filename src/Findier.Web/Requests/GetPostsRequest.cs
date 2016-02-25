@@ -8,9 +8,9 @@ namespace Findier.Web.Requests
 {
     public class GetPostsRequest : FindierBaseRequest<FindierPageData<Post>>
     {
-        public GetPostsRequest(PostSort sort) : base("posts")
+        public GetPostsRequest(Country country) : base("posts")
         {
-            this.Query(nameof(sort), sort);
+            this.Query(nameof(country), country);
         }
 
         public GetPostsRequest(string id) : base("categories/{id}/posts")
