@@ -5,6 +5,7 @@
     xmlns:engine="using:Findier.Windows.Engine"
     xmlns:viewModels="using:Findier.Windows.ViewModels"
     xmlns:converters="using:Findier.Windows.Tools.Converters"
+    xmlns:controls="using:Findier.Windows.Controls"
     RequestedTheme="Light">
     <engine:BootStrapper.Resources>
         <ResourceDictionary>
@@ -14,7 +15,15 @@
             <converters:NotConverter x:Key="NotConverter" />
             <converters:VisibilityConverter x:Key="VisibilityConverter" />
             <converters:VisibilityConverter x:Key="ReverseVisibilityConverter" IsReverse="True" />
-            
+
+            <DataTemplate x:Key="PostTemplate">
+                <controls:MaterialCard HeaderText="{Binding HeaderText}">
+                    <StackPanel>
+                        <TextBlock Text="{Binding Title}" TextWrapping="Wrap" />
+                    </StackPanel>
+                </controls:MaterialCard>
+            </DataTemplate>
+
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Themes/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>

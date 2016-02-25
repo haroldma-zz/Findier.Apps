@@ -43,16 +43,8 @@
                 </ListView>
             </PivotItem>
             <PivotItem x:Uid="HotPivot" Header="Hot" Margin="0">
-                <ListView Padding="0,5,0,0" ItemsSource="{Binding HotPostsCollection}" IsItemClickEnabled="True" SelectionMode="None">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <controls:MaterialCard HeaderText="{Binding HeaderText}">
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Title}" TextWrapping="Wrap" />
-                                </StackPanel>
-                            </controls:MaterialCard>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
+                <ListView Padding="0,5,0,0" ItemsSource="{Binding HotPostsCollection}" IsItemClickEnabled="True" SelectionMode="None"
+                          ItemTemplate="{StaticResource PostTemplate}">
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="ItemClick">
                             <core:InvokeCommandAction Command="{Binding PostClickCommand}" />
@@ -61,16 +53,8 @@
                 </ListView>
             </PivotItem>
             <PivotItem x:Uid="NewPivot" Header="New" Margin="0">
-                <ListView Padding="0,5,0,0" ItemsSource="{Binding NewPostsCollection}" IsItemClickEnabled="True" SelectionMode="None">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <controls:MaterialCard HeaderText="{Binding HeaderText}">
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Title}" TextWrapping="Wrap" />
-                                </StackPanel>
-                            </controls:MaterialCard>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
+                <ListView Padding="0,5,0,0" ItemsSource="{Binding NewPostsCollection}" IsItemClickEnabled="True" SelectionMode="None"
+                          ItemTemplate="{StaticResource PostTemplate}">
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="ItemClick">
                             <core:InvokeCommandAction Command="{Binding PostClickCommand}" />
@@ -79,16 +63,8 @@
                 </ListView>
             </PivotItem>
             <PivotItem x:Uid="TopPivot" Header="Top" Margin="0">
-                <ListView Padding="0,5,0,0" ItemsSource="{Binding TopPostsCollection}" IsItemClickEnabled="True" SelectionMode="None">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <controls:MaterialCard HeaderText="{Binding HeaderText}">
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Title}" TextWrapping="Wrap" />
-                                </StackPanel>
-                            </controls:MaterialCard>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
+                <ListView Padding="0,5,0,0" ItemsSource="{Binding TopPostsCollection}" IsItemClickEnabled="True" SelectionMode="None"
+                          ItemTemplate="{StaticResource PostTemplate}">
                     <interactivity:Interaction.Behaviors>
                         <core:EventTriggerBehavior EventName="ItemClick">
                             <core:InvokeCommandAction Command="{Binding PostClickCommand}" />
