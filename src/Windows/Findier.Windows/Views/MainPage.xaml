@@ -15,7 +15,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <controls:PageHeader x:Uid="MainPageHeader" Text="Home">
+        <controls:PageHeader x:Uid="MainPageHeader" Text="Findier">
             <controls:PageHeader.SecondaryCommands>
                 <AppBarButton x:Uid="ContactUsAppBar" Label="Contact us" Command="{Binding ContactCommand}" />
                 <AppBarButton x:Uid="ReviewAppBar" Label="Review" Command="{Binding ReviewCommand}" />
