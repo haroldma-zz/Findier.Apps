@@ -1,9 +1,9 @@
 ﻿using System;
-using Windows.ApplicationModel;
+using Android.App;
 using Findier.Core.Utilities.Interfaces;
-using Findier.Windows.Extensions;
+using Java.Lang;
 
-namespace Findier.Windows.Utilities
+namespace Findier.Android
 {
     internal class ApplicationUtility : IApplicationUtility
     {
@@ -27,8 +27,13 @@ namespace Findier.Windows.Utilities
             LaunchCount = _settingsUtility.Read("LaunchCount", 0) + 1;
             _settingsUtility.Write("LaunchCount", LaunchCount);
 
+            var versionName = Application.Context.PackageManager.GetPackageInfo(Application.Context.PackageName, 0).VersionName;
+            if (versionName.Contains("."))
+            {
+                
+            }
             // get current app version
-            CurrentVersion = Package.Current.Id.Version.ToVersion();
+            //CurrentVersion = Package.Current.Id.Version.ToVersion();
 
             // get previous app version
             var version = _settingsUtility.Read("LastLaunchVersion", CurrentVersion);

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto">
+    <Mvx.MvxListView
+        android:id="@+id/Categories"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="ItemsSource Categories"
+        local:MvxItemTemplate="@layout/categoryitem" />
+</LinearLayout>

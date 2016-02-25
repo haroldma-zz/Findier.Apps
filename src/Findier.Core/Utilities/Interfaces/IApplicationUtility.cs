@@ -12,8 +12,6 @@ namespace Findier.Core.Utilities.Interfaces
 
         int LaunchCount { get; }
 
-        void Exit();
-
         void OnStart();
     }
 }
