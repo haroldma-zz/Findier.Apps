@@ -177,6 +177,9 @@
   <data name="FreebieTypeButton.Content" xml:space="preserve">
     <value>Freebie</value>
   </data>
+  <data name="HotPivot.Header" xml:space="preserve">
+    <value>Hot</value>
+  </data>
   <data name="LoginRegisterAppBar.Label" xml:space="preserve">
     <value>Login/Register</value>
   </data>

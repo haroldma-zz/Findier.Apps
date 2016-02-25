@@ -19,6 +19,7 @@ namespace Findier.Windows.ViewModels
     public class MainViewModel : ViewModelBase
     {
         private CategoriesCollection _categoriesCollection;
+        private PostsCollection _hotPostsCollection;
         private PostsCollection _newPostsCollection;
         private PostsCollection _topPostsCollection;
 
@@ -38,14 +39,6 @@ namespace Findier.Windows.ViewModels
             }
         }
 
-        private void PostClickExecute(ItemClickEventArgs args)
-        {
-            var post = (Post)args.ClickedItem;
-            NavigationService.Navigate(typeof(PostPage), post);
-        }
-
-        public DelegateCommand<ItemClickEventArgs> PostClickCommand { get; }
-
         public CategoriesCollection CategoriesCollection
         {
             get
@@ -64,6 +57,18 @@ namespace Findier.Windows.ViewModels
 
         public IFindierService FindierService { get; }
 
+        public PostsCollection HotPostsCollection
+        {
+            get
+            {
+                return _hotPostsCollection;
+            }
+            set
+            {
+                Set(ref _hotPostsCollection, value);
+            }
+        }
+
         public DelegateCommand LoginCommand { get; }
 
         public DelegateCommand LogoutCommand { get; }
@@ -79,6 +84,8 @@ namespace Findier.Windows.ViewModels
                 Set(ref _newPostsCollection, value);
             }
         }
+
+        public DelegateCommand<ItemClickEventArgs> PostClickCommand { get; }
 
         public DelegateCommand ReviewCommand { get; }
 
@@ -103,6 +110,7 @@ namespace Findier.Windows.ViewModels
                 FindierService);
             NewPostsCollection = new PostsCollection(new GetPostsRequest(PostSort.New).Limit(20), FindierService);
             TopPostsCollection = new PostsCollection(new GetPostsRequest(PostSort.Top).Limit(20), FindierService);
+            HotPostsCollection = new PostsCollection(new GetPostsRequest(PostSort.Hot).Limit(20), FindierService);
         }
 
         private void CategoryClickExecute(ItemClickEventArgs args)
@@ -131,6 +139,12 @@ namespace Findier.Windows.ViewModels
             FindierService.Logout();
             NavigationService.Navigate(typeof (AuthenticationPage), clearBackStack: true);
             CurtainPrompt.Show("Goodbye!");
+        }
+
+        private void PostClickExecute(ItemClickEventArgs args)
+        {
+            var post = (Post)args.ClickedItem;
+            NavigationService.Navigate(typeof (PostPage), post);
         }
 
         private async void ReviewExecute()
