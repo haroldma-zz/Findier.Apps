@@ -108,9 +108,9 @@ namespace Findier.Windows.ViewModels
         {
             CategoriesCollection = new CategoriesCollection(new GetCategoriesRequest(Country.PR).Limit(20),
                 FindierService);
-            NewPostsCollection = new PostsCollection(new GetPostsRequest(PostSort.New).Limit(20), FindierService);
-            TopPostsCollection = new PostsCollection(new GetPostsRequest(PostSort.Top).Limit(20), FindierService);
-            HotPostsCollection = new PostsCollection(new GetPostsRequest(PostSort.Hot).Limit(20), FindierService);
+            HotPostsCollection = new PostsCollection(new GetPostsRequest(PostSort.Hot), FindierService);
+            NewPostsCollection = new PostsCollection(new GetPostsRequest(PostSort.New), FindierService);
+            TopPostsCollection = new PostsCollection(new GetPostsRequest(PostSort.Top), FindierService);
         }
 
         private void CategoryClickExecute(ItemClickEventArgs args)

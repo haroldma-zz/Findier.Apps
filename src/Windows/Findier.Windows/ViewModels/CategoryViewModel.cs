@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using Findier.Web.Enums;
 using Findier.Web.Models;
 using Findier.Web.Requests;
 using Findier.Web.Services;
@@ -14,7 +15,9 @@ namespace Findier.Windows.ViewModels
     {
         private readonly IFindierService _findierService;
         private Category _category;
-        private PostsCollection _postsCollection;
+        private PostsCollection _hotPostsCollection;
+        private PostsCollection _newPostsCollection;
+        private PostsCollection _topPostsCollection;
 
         public CategoryViewModel(IFindierService findierService)
         {
@@ -40,19 +43,43 @@ namespace Findier.Windows.ViewModels
             }
         }
 
-        public DelegateCommand NewPostCommand { get; }
-
-        public DelegateCommand<ItemClickEventArgs> PostClickCommand { get; }
-
-        public PostsCollection PostsCollection
+        public PostsCollection HotPostsCollection
         {
             get
             {
-                return _postsCollection;
+                return _hotPostsCollection;
             }
             set
             {
-                Set(ref _postsCollection, value);
+                Set(ref _hotPostsCollection, value);
+            }
+        }
+
+        public DelegateCommand NewPostCommand { get; }
+
+        public PostsCollection NewPostsCollection
+        {
+            get
+            {
+                return _newPostsCollection;
+            }
+            set
+            {
+                Set(ref _newPostsCollection, value);
+            }
+        }
+
+        public DelegateCommand<ItemClickEventArgs> PostClickCommand { get; }
+
+        public PostsCollection TopPostsCollection
+        {
+            get
+            {
+                return _topPostsCollection;
+            }
+            set
+            {
+                Set(ref _topPostsCollection, value);
             }
         }
 
@@ -62,8 +89,13 @@ namespace Findier.Windows.ViewModels
             IDictionary<string, object> state)
         {
             Category = (Category)parameter;
-            var postsRequest = new GetPostsRequest(Category.Id).Limit(20);
-            PostsCollection = new PostsCollection(postsRequest, _findierService);
+
+            HotPostsCollection = new PostsCollection(new GetPostsRequest(Category.Id).Sort(PostSort.Hot),
+                _findierService);
+            NewPostsCollection = new PostsCollection(new GetPostsRequest(Category.Id).Sort(PostSort.New),
+                _findierService);
+            TopPostsCollection = new PostsCollection(new GetPostsRequest(Category.Id).Sort(PostSort.Top),
+                _findierService);
         }
 
         private void NewPostExecute()
