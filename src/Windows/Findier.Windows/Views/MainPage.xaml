@@ -43,10 +43,40 @@
                 </ListView>
             </PivotItem>
             <PivotItem x:Uid="NewPivot" Header="New">
-                
+                <ListView Padding="0,5,0,0" ItemsSource="{Binding NewPostsCollection}" IsItemClickEnabled="True" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <controls:MaterialCard HeaderText="{Binding HeaderText}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Title}" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </controls:MaterialCard>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="ItemClick">
+                            <core:InvokeCommandAction Command="{Binding PostClickCommand}" />
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </ListView>
             </PivotItem>
             <PivotItem x:Uid="TopPivot" Header="Top">
-
+                <ListView Padding="0,5,0,0" ItemsSource="{Binding TopPostsCollection}" IsItemClickEnabled="True" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <controls:MaterialCard HeaderText="{Binding HeaderText}">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Title}" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </controls:MaterialCard>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <interactivity:Interaction.Behaviors>
+                        <core:EventTriggerBehavior EventName="ItemClick">
+                            <core:InvokeCommandAction Command="{Binding PostClickCommand}" />
+                        </core:EventTriggerBehavior>
+                    </interactivity:Interaction.Behaviors>
+                </ListView>
             </PivotItem>
         </Pivot>
     </Grid>

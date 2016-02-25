@@ -19,11 +19,14 @@ namespace Findier.Windows.ViewModels
     public class MainViewModel : ViewModelBase
     {
         private CategoriesCollection _categoriesCollection;
+        private PlainPostsCollection _newPostsCollection;
+        private PlainPostsCollection _topPostsCollection;
 
         public MainViewModel(IFindierService findierService)
         {
             FindierService = findierService;
             CategoryClickCommand = new DelegateCommand<ItemClickEventArgs>(CategoryClickExecute);
+            PostClickCommand = new DelegateCommand<ItemClickEventArgs>(PostClickExecute);
             LoginCommand = new DelegateCommand(LoginExecute);
             LogoutCommand = new DelegateCommand(LogoutExecute);
             ContactCommand = new DelegateCommand(ContactExecute);
@@ -35,9 +38,13 @@ namespace Findier.Windows.ViewModels
             }
         }
 
-        public DelegateCommand ContactCommand { get; }
+        private void PostClickExecute(ItemClickEventArgs args)
+        {
+            var post = (PlainPost)args.ClickedItem;
+            NavigationService.Navigate(typeof(PostPage), post.Id);
+        }
 
-        public DelegateCommand<ItemClickEventArgs> CategoryClickCommand { get; }
+        public DelegateCommand<ItemClickEventArgs> PostClickCommand { get; }
 
         public CategoriesCollection CategoriesCollection
         {
@@ -51,20 +58,57 @@ namespace Findier.Windows.ViewModels
             }
         }
 
+        public DelegateCommand<ItemClickEventArgs> CategoryClickCommand { get; }
+
+        public DelegateCommand ContactCommand { get; }
+
         public IFindierService FindierService { get; }
 
         public DelegateCommand LoginCommand { get; }
 
         public DelegateCommand LogoutCommand { get; }
 
+        public PlainPostsCollection NewPostsCollection
+        {
+            get
+            {
+                return _newPostsCollection;
+            }
+            set
+            {
+                Set(ref _newPostsCollection, value);
+            }
+        }
+
         public DelegateCommand ReviewCommand { get; }
+
+        public PlainPostsCollection TopPostsCollection
+        {
+            get
+            {
+                return _topPostsCollection;
+            }
+            set
+            {
+                Set(ref _topPostsCollection, value);
+            }
+        }
 
         public override sealed void OnNavigatedTo(
             object parameter,
             NavigationMode mode,
             IDictionary<string, object> state)
         {
-            CategoriesCollection = new CategoriesCollection(new GetCategoriesRequest(Country.PR).Limit(20), FindierService);
+            CategoriesCollection = new CategoriesCollection(new GetCategoriesRequest(Country.PR).Limit(20),
+                FindierService);
+            NewPostsCollection = new PlainPostsCollection(new GetPostsRequest(PostSort.New).Limit(20), FindierService);
+            TopPostsCollection = new PlainPostsCollection(new GetPostsRequest(PostSort.Top).Limit(20), FindierService);
+        }
+
+        private void CategoryClickExecute(ItemClickEventArgs args)
+        {
+            var finboard = (Category)args.ClickedItem;
+            NavigationService.Navigate(typeof (CategoryPage), finboard);
         }
 
         private async void ContactExecute()
@@ -75,12 +119,6 @@ namespace Findier.Windows.ViewModels
             };
             mail.To.Add(new EmailRecipient("help@zumicts.com", "Zumicts Support"));
             await EmailManager.ShowComposeNewEmailAsync(mail);
-        }
-
-        private void CategoryClickExecute(ItemClickEventArgs args)
-        {
-            var finboard = (Category)args.ClickedItem;
-            NavigationService.Navigate(typeof (CategoryPage), finboard);
         }
 
         private void LoginExecute()

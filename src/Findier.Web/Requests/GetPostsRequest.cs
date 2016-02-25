@@ -6,19 +6,24 @@ using Findier.Web.Responses;
 
 namespace Findier.Web.Requests
 {
-    public class GetCategoryPostsRequest : FindierBaseRequest<FindierPageData<PlainPost>>
+    public class GetPostsRequest : FindierBaseRequest<FindierPageData<PlainPost>>
     {
-        public GetCategoryPostsRequest(string id) : base("categories/{id}/posts")
+        public GetPostsRequest(PostSort sort) : base("posts")
+        {
+            this.Parameter(nameof(sort), sort.ToString());
+        }
+
+        public GetPostsRequest(string id) : base("categories/{id}/posts")
         {
             this.Segment("id", id);
         }
 
-        public GetCategoryPostsRequest Limit(int limit)
+        public GetPostsRequest Limit(int limit)
         {
             return this.Query("limit", limit);
         }
 
-        public GetCategoryPostsRequest Offset(int offset)
+        public GetPostsRequest Offset(int offset)
         {
             return this.Query("offset", offset);
         }

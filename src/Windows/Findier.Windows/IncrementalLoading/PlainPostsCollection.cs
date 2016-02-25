@@ -10,19 +10,19 @@ using Findier.Windows.Common;
 
 namespace Findier.Windows.IncrementalLoading
 {
-    public class PlainPostCollection : IncrementalLoadingBase<PlainPost>
+    public class PlainPostsCollection : IncrementalLoadingBase<PlainPost>
     {
         private readonly IFindierService _findierService;
-        private readonly GetCategoryPostsRequest _request;
+        private readonly GetPostsRequest _request;
         private FindierResponse<FindierPageData<PlainPost>> _currentResponse;
 
-        public PlainPostCollection(GetCategoryPostsRequest request, IFindierService findierService)
+        public PlainPostsCollection(GetPostsRequest request, IFindierService findierService)
         {
             _request = request;
             _findierService = findierService;
         }
 
-        internal PlainPostCollection(Surrogate surrogate, IFindierService findierService)
+        internal PlainPostsCollection(Surrogate surrogate, IFindierService findierService)
         {
             foreach (var item in surrogate.Items)
             {
@@ -46,7 +46,7 @@ namespace Findier.Windows.IncrementalLoading
         protected override async Task<IList<PlainPost>> LoadMoreItemsOverrideAsync(CancellationToken c, uint count)
         {
             var response = await _findierService
-                .SendAsync<GetCategoryPostsRequest, FindierPageData<PlainPost>>(_request.Offset(Count).Limit((int)count));
+                .SendAsync<GetPostsRequest, FindierPageData<PlainPost>>(_request.Offset(Count).Limit((int)count));
             if (!response.IsSuccessStatusCode)
             {
                 return null;
@@ -67,7 +67,7 @@ namespace Findier.Windows.IncrementalLoading
             {
             }
 
-            internal Surrogate(PlainPostCollection collection)
+            internal Surrogate(PlainPostsCollection collection)
             {
                 Items = collection.ToList();
                 CurrentResponse = collection._currentResponse;
@@ -78,11 +78,11 @@ namespace Findier.Windows.IncrementalLoading
 
             public List<PlainPost> Items { get; set; }
 
-            public GetCategoryPostsRequest Request { get; set; }
+            public GetPostsRequest Request { get; set; }
 
-            public PlainPostCollection ToCollection(IFindierService apiService)
+            public PlainPostsCollection ToCollection(IFindierService apiService)
             {
-                return new PlainPostCollection(this, apiService);
+                return new PlainPostsCollection(this, apiService);
             }
         }
     }

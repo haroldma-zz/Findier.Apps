@@ -50,6 +50,7 @@
     <Compile Include="Deserializers\JsonDeserializer.cs" />
     <Compile Include="Deserializers\JsonSerializer.cs" />
     <Compile Include="Enums\Country.cs" />
+    <Compile Include="Enums\PostSort.cs" />
     <Compile Include="Enums\PostType.cs" />
     <Compile Include="Extensions\FluentRestExtensions.cs" />
     <Compile Include="FindierConstants.cs" />
@@ -74,7 +75,7 @@
     <Compile Include="Requests\EditPostRequest.cs" />
     <Compile Include="Requests\GetCategoriesRequest.cs" />
     <Compile Include="Requests\FindierBaseRequest.cs" />
-    <Compile Include="Requests\GetCategoryPostsRequest.cs" />
+    <Compile Include="Requests\GetPostsRequest.cs" />
     <Compile Include="Requests\GetPostCommentsRequest.cs" />
     <Compile Include="Requests\GetPostRequest.cs" />
     <Compile Include="Requests\OAuthRequest.cs" />

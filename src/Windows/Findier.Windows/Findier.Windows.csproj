@@ -192,7 +192,7 @@
     <Compile Include="Extensions\VisualTreeHelperExtensions.cs" />
     <Compile Include="IncrementalLoading\CommentCollection.cs" />
     <Compile Include="IncrementalLoading\CategoriesCollection.cs" />
-    <Compile Include="IncrementalLoading\PlainPostCollection.cs" />
+    <Compile Include="IncrementalLoading\PlainPostsCollection.cs" />
     <Compile Include="Interactions\CloseFlyoutAction.cs" />
     <Compile Include="Interactions\NavigateToPageAction.cs" />
     <Compile Include="Interactions\OpenFlyoutAction.cs" />
